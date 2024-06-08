@@ -75,31 +75,10 @@ WSGI_APPLICATION = 'LegadoIvoPitz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'FamiliaPitz',
-        'USER': 'Julio',
-        'PASSWORD': os.environ.get('DB_Julio_PASSWORD'),
-        'HOST': 'mysql_FamiliaPitz',  # Nome do serviço do contêiner MySQL no Docker Compose
-        'PORT': '3306',
-    },
-    'user2_db': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'Pitz',
-        'PASSWORD': os.environ.get('DB_Pitz_PASSWORD'),
-        'HOST': 'mysql_FamiliaPitz',  # Nome do serviço do contêiner MySQL no Docker Compose
-        'PORT': '3306',
-    },
-    'user3_db': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'Vinicius',
-        'PASSWORD': os.environ.get('DB_Vinicius_PASSWORD'),
-        'HOST': 'mysql_FamiliaPitz',  # Nome do serviço do contêiner MySQL no Docker Compose
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 
