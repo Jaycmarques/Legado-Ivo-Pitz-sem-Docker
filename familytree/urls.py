@@ -1,11 +1,11 @@
 from django.urls import path
-from . import views
+from familytree import views
 
 
 # familytree/urls.py
 
 
 urlpatterns = [
-    path('', views.familytree, name='index'),
-    path('detail/', views.detail, name='detail'),
+    path('', views.familytree, name='familytree_index'),
+    path('detail/', views.detail, name='familytree_detail'),
 ]

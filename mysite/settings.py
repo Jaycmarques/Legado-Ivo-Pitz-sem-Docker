@@ -55,7 +55,11 @@ ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [os.path.join(BASE_DIR, 'pages', 'templates')],
+    'DIRS': [
+        os.path.join(BASE_DIR, 'templates'),
+        os.path.join(BASE_DIR, 'familytree', 'templates', 'familytree'),
+        os.path.join(BASE_DIR, 'pages', 'templates', 'pages'),
+    ],
     'APP_DIRS': True,
     'OPTIONS': {
         'context_processors': [
@@ -114,10 +118,8 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'pages/static'),  # Para 'pages' e outros arquivos estáticos
-    os.path.join(
-        BASE_DIR, 'familytree', 'static', 'familytree', 'static'
-    ),  # Para arquivos estáticos específicos de 'familytree'
+    os.path.join(BASE_DIR, 'pages/static/pages/css'),
+    os.path.join(BASE_DIR, 'familytree/static/familytree/css'),
 ]
 
 

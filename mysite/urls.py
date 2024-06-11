@@ -17,10 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-from pages import views
+from pages import views as pages_views
 
 urlpatterns = [
-    path('', views.home_view, name='home'),  # Home page
+    path('', pages_views.home_view, name='home'),  # Home page
     path('admin/', admin.site.urls),  # Admin do Django
     path('familytree/', include('familytree.urls')),
 ]
