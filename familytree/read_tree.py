@@ -1,8 +1,4 @@
-from django.db import models
-
 # Create your models here.
-
-
 class FamilyMember:
     """
     - This class handles information about family members
