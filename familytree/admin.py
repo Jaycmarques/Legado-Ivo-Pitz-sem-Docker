@@ -1,6 +1,14 @@
 from django.contrib import admin
+from .models import FamilyMember, Relationship
 
-# Register your models here.
-from .models import Member
 
-admin.site.register(Member)
+class RelationshipInline(admin.TabularInline):
+    model = Relationship
+    fk_name = 'parent'
+
+
+class FamilyMemberAdmin(admin.ModelAdmin):
+    inlines = [RelationshipInline]
+
+
+admin.site.register(FamilyMember, FamilyMemberAdmin)
