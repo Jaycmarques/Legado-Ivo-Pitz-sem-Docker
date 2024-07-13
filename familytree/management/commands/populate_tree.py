@@ -1,4 +1,4 @@
-# familytree/scripts/populate_tree.py
+# familytree/management/commands/populate_tree.py
 from django.core.management.base import BaseCommand
 from familytree.models import FamilyMember, Relationship
 
@@ -8,7 +8,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         family = []
-        with open('familyData.txt') as file:
+        with open('/home/jcmarques/.ssh/Legado-Ivo-Pitz/familytree/familyData.txt') as file:
             lines = file.readlines()
             for line in lines:
                 parts = line.strip().split(" - ")
@@ -16,7 +16,19 @@ class Command(BaseCommand):
                 name = parts[1].split(",")[0].strip()
                 partner_name = parts[1].split(",")[1].strip() if len(parts[1].split(",")) > 1 else None
 
-                member = FamilyMember.objects.create(id=id, name=name, partner=partner_name)
+                try:
+                    # Tenta buscar o FamilyMember pelo id
+                    member = FamilyMember.objects.get(id=id)
+
+                    # Se encontrado, atualiza os campos relevantes
+                    member.name = name
+                    member.partner = partner_name
+                    member.save()
+
+                except FamilyMember.DoesNotExist:
+                    # Se não existir, cria um novo FamilyMember
+                    member = FamilyMember.objects.create(id=id, name=name, partner=partner_name)
+
                 family.append(member)
 
         for i in range(len(family)):
