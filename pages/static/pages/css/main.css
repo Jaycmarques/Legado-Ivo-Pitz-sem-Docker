@@ -17,7 +17,6 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    /* Necessário para o dropdown */
 }
 
 .page-header h1 {
@@ -37,7 +36,6 @@ body {
 
 .menu-toggle {
     display: none;
-    /* Ocultar o botão de menu em dispositivos grandes */
 }
 
 .main-menu {
@@ -49,7 +47,6 @@ body {
 
 .main-menu li {
     position: relative;
-    /* Necessário para o dropdown */
 }
 
 .main-menu a {
@@ -70,7 +67,6 @@ body {
 /* Dropdown Menu Styles */
 .dropdown-menu {
     display: none;
-    /* Oculta o menu dropdown por padrão */
     position: absolute;
     top: 100%;
     right: 0;
@@ -108,13 +104,11 @@ body {
 @media (max-width: 767.98px) {
     .main-menu {
         display: none;
-        /* Oculta o menu principal por padrão em dispositivos móveis */
         flex-direction: column;
     }
 
     .main-nav.show .main-menu {
         display: flex;
-        /* Exibe o menu ao clicar no botão */
     }
 
     .menu-toggle {
@@ -132,45 +126,59 @@ body {
     background-color: #343a40;
     color: #f8f9fa;
     padding: 1rem 2rem;
-    /* Diminui o padding do rodapé */
     margin-top: auto;
-    /* Garante que o rodapé fique no final da página */
     border-top: 1px solid #495057;
-    text-align: left;
-    /* Alinha o texto à esquerda */
+    display: flex;
+    flex-direction: column;
 }
 
-.main-footer h3 {
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 3;
+    min-width: 200px;
+    margin-bottom: 1rem;
+
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links h3 {
     font-size: 1.2rem;
-    /* Diminui o tamanho da fonte do título */
     margin-bottom: 0.5rem;
-    /* Diminui a margem inferior */
-    color: #f8f9fa;
 }
 
-.main-footer address {
-    font-style: normal;
-    line-height: 1.4;
-    /* Diminui a altura da linha para compactar o texto */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.main-footer address a {
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
     color: #f8f9fa;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.main-footer address a:hover {
+.footer-links a:hover {
     color: #adb5bd;
 }
 
 .rights {
     background-color: #495057;
     padding: 0.5rem 1rem;
-    /* Diminui o padding da seção de direitos */
     text-align: center;
-    /* Alinha o texto ao centro */
     border-top: 1px solid #6c757d;
     font-size: 0.8rem;
-    /* Diminui o tamanho da fonte */
 }

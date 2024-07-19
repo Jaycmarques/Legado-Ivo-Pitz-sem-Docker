@@ -1,22 +1,30 @@
-<footer class="main-footer mt-5 pt-4 text-light">
+<footer class="main-footer">
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="footer-content">
+            <div class="contact-info">
                 <h3>Entre em Contato</h3>
                 <address>
                     +55 12 997-411-855
                     <br />
-                    <a href="mailto:{{ contato_email }}" class="text-light">{{ contato_email }}</a>
+                    <a href="mailto:email@email.com"
+                        style="color: #f8f9fa; text-decoration: none; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='#adb5bd';"
+                        onmouseout="this.style.color='#f8f9fa';">email@email.com</a>
                 </address>
+            </div>
+            <div class="footer-links">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#">Igreja Católica</a></li>
+                    <li><a href="#">Projeto MATAR</a></li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="rights pb-4">
+    <div class="rights">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    {% now 'Y' %} Ivo Pitz. Todos direitos reservados.
-                </div>
+            <div class="text-center">
+                {% now 'Y' %} Ivo Pitz. Todos direitos reservados.
             </div>
         </div>
     </div>

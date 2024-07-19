@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'pages',
     'familytree',
+    'ordered_model',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ TEMPLATES = [{
     'APP_DIRS': True,
     'OPTIONS': {
         'context_processors': [
+            'pages.context_processors.listar_pages',
             'django.template.context_processors.debug',
             'django.template.context_processors.request',
             'django.contrib.auth.context_processors.auth',

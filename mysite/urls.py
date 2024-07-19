@@ -23,4 +23,5 @@ urlpatterns = [
     path('', pages_views.home_view, name='home'),  # Home page
     path('admin/', admin.site.urls),  # Admin do Django
     path('familytree/', include('familytree.urls')),
+    path('pages/', include('pages.urls')),
 ]
