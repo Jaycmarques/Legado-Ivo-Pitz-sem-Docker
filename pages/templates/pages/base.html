@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -13,13 +13,37 @@
 <body>
     <header class="page-header">
         <h1><a href="{% url 'home' %}">Minha Aplicação</a></h1>
+        <nav class="main-nav">
+            <button class="menu-toggle">Menu</button>
+            <ul class="main-menu">
+                <li><a href="{% url 'home' %}">Início</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Português</a></li>
+                        <li><a href="#">Lusófonos</a></li>
+                        <li><a href="#">Redação</a></li>
+                        <li><a href="#">História</a></li>
+                        <li><a href="#">Curiosidades</a></li>
+                        <li><a href="#">Poemas</a></li>
+                        <li><a href="#">Família Pitz</a></li>
+                        <li><a href="#">Linques</a></li>
+                        <li><a href="#">Textos</a></li>
+                        <li><a href="#">Notícias</a></li>
+                        <li><a href="#">Dicionário</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Alunos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main class="container">
         {% block content %}{% endblock %}
     </main>
-    <footer>
-        <p>&copy; {% now 'Y' %} Minha Aplicação</p>
-    </footer>
+
+    {% include 'pages/footer.html' with contato_email='exemplo@email.com' only %}
+    <script src="{% static 'pages/js/main.js' %}"></script>
 </body>
 
 </html>

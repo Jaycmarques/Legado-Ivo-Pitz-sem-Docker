@@ -1,14 +1,28 @@
+/* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .page-header {
     background-color: #333;
     color: white;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* Necessário para o dropdown */
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2rem;
 }
 
 .page-header a {
@@ -16,16 +30,147 @@ body {
     text-decoration: none;
 }
 
-.container {
-    padding: 20px;
+/* Menu de Navegação Principal */
+.main-nav {
+    position: relative;
 }
 
-footer {
-    background-color: #333;
+.menu-toggle {
+    display: none;
+    /* Ocultar o botão de menu em dispositivos grandes */
+}
+
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-menu li {
+    position: relative;
+    /* Necessário para o dropdown */
+}
+
+.main-menu a {
     color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    background-color: #333;
+    border: 1px solid #495057;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-menu a:hover {
+    background-color: #495057;
+    color: #f8f9fa;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none;
+    /* Oculta o menu dropdown por padrão */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    padding: 10px 0;
+    list-style: none;
+    border: 1px solid #495057;
+    z-index: 1000;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
     width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #495057;
+}
+
+/* Mostrar o dropdown ao clicar */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Estilos para o menu em dispositivos móveis */
+@media (max-width: 767.98px) {
+    .main-menu {
+        display: none;
+        /* Oculta o menu principal por padrão em dispositivos móveis */
+        flex-direction: column;
+    }
+
+    .main-nav.show .main-menu {
+        display: flex;
+        /* Exibe o menu ao clicar no botão */
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+}
+
+/* Rodapé */
+.main-footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 1rem 2rem;
+    /* Diminui o padding do rodapé */
+    margin-top: auto;
+    /* Garante que o rodapé fique no final da página */
+    border-top: 1px solid #495057;
+    text-align: left;
+    /* Alinha o texto à esquerda */
+}
+
+.main-footer h3 {
+    font-size: 1.2rem;
+    /* Diminui o tamanho da fonte do título */
+    margin-bottom: 0.5rem;
+    /* Diminui a margem inferior */
+    color: #f8f9fa;
+}
+
+.main-footer address {
+    font-style: normal;
+    line-height: 1.4;
+    /* Diminui a altura da linha para compactar o texto */
+}
+
+.main-footer address a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-footer address a:hover {
+    color: #adb5bd;
+}
+
+.rights {
+    background-color: #495057;
+    padding: 0.5rem 1rem;
+    /* Diminui o padding da seção de direitos */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    border-top: 1px solid #6c757d;
+    font-size: 0.8rem;
+    /* Diminui o tamanho da fonte */
 }
