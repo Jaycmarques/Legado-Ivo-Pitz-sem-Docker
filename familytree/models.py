@@ -26,8 +26,8 @@ class FamilyMember(models.Model):
 
 
 class Relationship(models.Model):
-    parent = models.ForeignKey(FamilyMember, related_name='parent', on_delete=models.CASCADE)
-    child = models.ForeignKey(FamilyMember, related_name='child', on_delete=models.CASCADE)
+    parent = models.ForeignKey(FamilyMember, related_name='parent', on_delete=models.PROTECT)
+    child = models.ForeignKey(FamilyMember, related_name='child', on_delete=models.PROTECT)
 
     def __str__(self):
         return f'{self.parent.name} -> {self.child.name}'
