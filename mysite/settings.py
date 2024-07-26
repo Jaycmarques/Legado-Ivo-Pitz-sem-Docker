@@ -118,7 +118,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# URL para acessar arquivos estáticos na aplicação
 STATIC_URL = '/static/'
+
+# Diretório onde os arquivos estáticos são coletados
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Diretórios adicionais para procurar arquivos estáticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'pages', 'static'),  # Adicione o caminho correto para arquivos estáticos de aplicativos
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
