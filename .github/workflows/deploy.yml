@@ -23,9 +23,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Passo para executar o script Python
+    #   - name: Run tests
+    #     run: |
+    #       pytest
+
       - name: Deploy to PythonAnywhere
         env:
           PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         run: |
-          python scripts/reload_webapp.py
+          curl -X POST "https://www.pythonanywhere.com/api/v0/user/jcmarques/webapps/jcmarques/reload/" \
+               -H "Authorization: Token $PA_API_TOKEN"
