@@ -4,15 +4,25 @@
 {% block title %}{{ page.titulo }}{% endblock %}
 {% block description %}Página com detalhes {{ page.titulo }}{% endblock %}
 
+{% if page.get_css_url %}
+<link rel="stylesheet" href="{{ page.get_css_url }}">
+{% else %}
+<link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
+{% endif %}
+
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 class="mt-4 mb-3">{{ page.titulo }}</h1>
+            {% if not page.redirect_url %}
             <dl>
-                <dt>Descrição</dt>
                 <dd>{{ page.descricao }}</dd>
             </dl>
+            {% else %}
+            <p>Este poema está disponível em: <a href="{{ page.redirect_url }}" target="_blank">{{ page.redirect_url
+                    }}</a></p>
+            {% endif %}
         </div>
     </div>
 </div>

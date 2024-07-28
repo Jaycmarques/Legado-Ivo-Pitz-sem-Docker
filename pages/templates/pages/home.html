@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Ivo Pitz{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.PNG' %}">
     <link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
     {% block extra_head %}{% endblock %}
 </head>
@@ -16,7 +17,6 @@
         <nav class="main-nav">
             <button class="menu-toggle">Menu</button>
             <ul class="main-menu">
-                <li><a href="{% url 'home' %}">Início</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Menu</a>
                     <ul class="dropdown-menu">

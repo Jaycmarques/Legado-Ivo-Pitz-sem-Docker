@@ -1,9 +1,9 @@
 from django.contrib import admin
-from pages.models import Page
+from .models import Page
 from ordered_model.admin import OrderedModelAdmin
 
 
 @admin.register(Page)
-class ModuloAdmin(OrderedModelAdmin):
-    list_display = ('titulo', 'move_up_down_links')
+class PageAdmin(OrderedModelAdmin):
+    list_display = ('titulo', 'redirect_url', 'css_file', 'move_up_down_links')
     prepopulated_fields = {'slug': ('titulo',)}
