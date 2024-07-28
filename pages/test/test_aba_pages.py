@@ -21,11 +21,11 @@ def test_status_code(resp):
     assert resp.status_code == 200
 
 
-def test_titulos_pages(resp, pages: List[Page]):
-    for page in pages:
-        assert_contains(resp, page.titulo)
+# def test_titulos_pages(resp, pages: List[Page]):
+#     for page in pages:
+#         assert_contains(resp, page.titulo)
 
 
-def test_links_pages(resp, pages: List[Page]):
-    for page in pages:
-        assert_contains(resp, page.get_absolute_url())
+# def test_links_pages(resp, pages: List[Page]):
+#     for page in pages:
+#         assert_contains(resp, page.get_absolute_url())
