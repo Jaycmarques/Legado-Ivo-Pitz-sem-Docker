@@ -1,10 +1,16 @@
 import requests
+import os
 
 # Defina suas variáveis de ambiente
 username = 'jcmarques'
 domain_name = 'jcmarques.pythonanywhere.com'  # Nome completo do domínio
-token = '19009bba6d7cfd7d1e6c362e3f69f6165dfab307'
 host = 'www.pythonanywhere.com'  # ou 'eu.pythonanywhere.com' se estiver na UE
+
+# Obtenha o token da variável de ambiente
+token = os.getenv('PA_API_TOKEN')
+
+if not token:
+    raise ValueError("A variável de ambiente PA_API_TOKEN não está definida.")
 
 # URL correta para o endpoint de recarregamento
 url = f'https://{host}/api/v0/user/{username}/webapps/{domain_name}/reload/'
