@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Deploy to PythonAnywhere
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run deployment script
-        env:
-          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
-        run: |
-          python scripts/reload_webapp.py
+      - name: Reload PythonAnywhere webapp
+        uses: jensvog/pythonanywhere-webapp-reload-action@v1
+        with:
+          host: www.pythonanywhere.com
+          username: jcmarques
+          api-token: ${{ secrets.PA_API_TOKEN }}
+          domain-name: jcmarques.pythonanywhere.com
