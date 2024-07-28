@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from pages import facade
+from pages.models import Page
 
 # Create your views here.
 
 
 def home_view(request, *args, **kwargs):
-    return render(request, "pages/home.html")
+    pages = Page.objects.all()
+    return render(request, "pages/home.html", {'pages': pages})
 
 
 def detalhe(request, slug):
