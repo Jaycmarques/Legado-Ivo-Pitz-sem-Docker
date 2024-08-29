@@ -1,9 +1,14 @@
 {% extends 'pages/base.html' %}
+{% load static %}
 {% block content %}
 <div class="container mt-4">
     <div class="row align-items-center">
         <div class="col-md-6">
-            <img src="{% static 'img/specific_image.jpg' %}" alt="Descrição da imagem" class="img-fluid">
+            <a href="https://fr.wikipedia.org/wiki/(19182)_Pitz" target="_blank"
+                class="text-primary text-decoration-none">
+                <img src="{% static 'img/asteroide_pitz.png' %}" alt="Descrição da imagem" class="img-fluid"
+                    style="width: 500px; height: auto;">
+            </a>
         </div>
         <div class="col-md-6">
             <h2>{{ page.titulo }}</h2>

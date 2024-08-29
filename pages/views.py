@@ -20,6 +20,6 @@ def detalhe(request, slug):
         render(request, template_name, {'page': page})
     except TemplateDoesNotExist:
         # Se o template específico não existir, use um genérico
-        template_name = 'pages/page_detalhe.html'
+        template_name = 'pages/pages_detalhe.html'
 
     return render(request, template_name, {'page': page})
