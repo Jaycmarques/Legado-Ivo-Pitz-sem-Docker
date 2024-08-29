@@ -1,0 +1,150 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}Países Lusófonos{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Lista de Países onde o Português é Língua Oficial</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>País</th>
+                <th>População (2014)</th>
+                <th>IDH (2018)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Brasil" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_brasil.png' %}" alt="Bandeira do Brasil" class="img-fluid"
+                            style="width: 50px; height: auto;">
+                        Brasil
+                    </a>
+                </td>
+                <td>202 656 788</td>
+                <td>0,761 (alto)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Mo%C3%A7ambique" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_mocambique.png' %}" alt="Bandeira de Moçambique"
+                            class="img-fluid" style="width: 50px; height: auto;">
+                        Moçambique
+                    </a>
+                </td>
+                <td>24 692 144</td>
+                <td>0,446 (baixo)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Angola" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_angola.png' %}" alt="Bandeira de Angola" class="img-fluid"
+                            style="width: 50px; height: auto;">
+                        Angola
+                    </a>
+                </td>
+                <td>24 300 000</td>
+                <td>0,574 (médio)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Portugal" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_portugal.png' %}" alt="Bandeira de Portugal" class="img-fluid"
+                            style="width: 50px; height: auto;">
+                        Portugal
+                    </a>
+                </td>
+                <td>10 813 834</td>
+                <td>0,850 (muito alto)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Guin%C3%A9-Bissau" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_guine_bissau.png' %}" alt="Bandeira da Guiné-Bissau"
+                            class="img-fluid" style="width: 50px; height: auto;">
+                        Guiné-Bissau
+                    </a>
+                </td>
+                <td>1 693 398</td>
+                <td>0,461 (baixo)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Timor-Leste" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_timor_leste.png' %}" alt="Bandeira de Timor-Leste"
+                            class="img-fluid" style="width: 50px; height: auto;">
+                        Timor-Leste
+                    </a>
+                </td>
+                <td>1 201 542</td>
+                <td>0,626 (médio)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Guin%C3%A9_Equatorial" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_guine_equatorial.png' %}" alt="Bandeira da Guiné Equatorial"
+                            class="img-fluid" style="width: 50px; height: auto;">
+                        Guiné Equatorial
+                    </a>
+                </td>
+                <td>1 099 531</td>
+                <td>0,650 (médio)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Macau" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_macau.png' %}" alt="Bandeira de Macau" class="img-fluid"
+                            style="width: 50px; height: auto;">
+                        Macau (China)
+                    </a>
+                </td>
+                <td>587 914</td>
+                <td>0,914 (muito alto)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/Cabo_Verde" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_cabo_verde.png' %}" alt="Bandeira de Cabo Verde"
+                            class="img-fluid" style="width: 50px; height: auto;">
+                        Cabo Verde
+                    </a>
+                </td>
+                <td>538 535</td>
+                <td>0,651 (médio)</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://pt.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_e_Pr%C3%ADncipe" target="_blank"
+                        class="text-primary text-decoration-none">
+                        <img src="{% static 'img/bandeira_sao_tome_principe.png' %}"
+                            alt="Bandeira de São Tomé e Príncipe" class="img-fluid" style="width: 50px; height: auto;">
+                        São Tomé e Príncipe
+                    </a>
+                </td>
+                <td>190 428</td>
+                <td>0,609 (médio)</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>267 396 837</strong></td>
+                <td><strong>-</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Nota: Alguns linguistas argumentam que o galego, falado na Galiza, é na verdade apenas um dialeto do português; o
+        que naturalmente também tornaria o noroeste da Espanha uma parte do mundo lusófono.</p>
+</div>
+{% endblock %}

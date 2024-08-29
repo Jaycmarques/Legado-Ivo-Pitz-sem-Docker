@@ -1,0 +1,20 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}{{ page.titulo }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">{{ page.titulo }}</h1>
+    <div class="row">
+        {% if page.imagem %}
+        <div class="col-md-6 mb-4">
+            <img src="{{ page.imagem.url }}" alt="Imagem da página" class="img-fluid">
+        </div>
+        {% endif %}
+        <div class="col-md-6">
+            <p>{{ page.descricao }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

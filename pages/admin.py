@@ -5,5 +5,5 @@ from ordered_model.admin import OrderedModelAdmin
 
 @admin.register(Page)
 class PageAdmin(OrderedModelAdmin):
-    list_display = ('titulo', 'redirect_url', 'css_file', 'move_up_down_links')
+    list_display = ('titulo', 'redirect_url', 'move_up_down_links')
     prepopulated_fields = {'slug': ('titulo',)}

@@ -1,31 +1,29 @@
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="contact-info">
-                <h3>Entre em Contato</h3>
+<footer class="bg-light text-dark mt-4">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Entre em Contato</h5>
                 <address>
-                    +55 12 997-411-855
-                    <br />
-                    <a href="mailto:email@email.com"
-                        style="color: #f8f9fa; text-decoration: none; transition: color 0.3s ease;"
-                        onmouseover="this.style.color='#adb5bd';"
-                        onmouseout="this.style.color='#f8f9fa';">diogo@email.com</a>
+                    <p>+55 12 997-411-855</p>
+                    <p>
+                        <a href="mailto:diogo@email.com" class="text-dark" style="text-decoration: none;">
+                            diogo@email.com
+                        </a>
+                    </p>
                 </address>
             </div>
-            <div class="footer-links">
-                <h3>Links Úteis</h3>
-                <ul>
-                    <li><a href="#">Igreja Católica</a></li>
-                    <li><a href="#">Projeto MATAR</a></li>
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Links Úteis</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-dark text-decoration-none">Igreja Católica</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Projeto MATAR</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="rights">
-        <div class="container">
-            <div class="text-center">
-                {% now 'Y' %} Ivo Pitz. Todos direitos reservados.
-            </div>
+    <div class="bg-dark text-white py-3">
+        <div class="container text-center">
+            &copy; {% now 'Y' %} Ivo Pitz. Todos os direitos reservados.
         </div>
     </div>
 </footer>

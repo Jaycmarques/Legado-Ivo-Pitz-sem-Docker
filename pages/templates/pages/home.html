@@ -1,39 +1,21 @@
+{% extends 'pages/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Ivo Pitz{% endblock %}</title>
-    <link rel="icon" type="image/png" href="{% static 'img/favicon.PNG' %}">
-    <link rel="stylesheet" href="{% static 'pages/css/main.css' %}">
-    {% block extra_head %}{% endblock %}
-</head>
-
-<body>
-    <header class="page-header">
-        <h1><a href="{% url 'home' %}">Ivo Pitz</a></h1>
-        <nav class="main-nav">
-            <button class="menu-toggle">Menu</button>
-            <ul class="main-menu">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Menu</a>
-                    <ul class="dropdown-menu">
-                        {% for page in PAGES %}
-                        <a class="dropdown-item" href="{{ page.get_absolute_url }}">{{ page.titulo }}</a>
-                        {% endfor %}
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main class="container">
-        {% block content %}{% endblock %}
-    </main>
-
-    {% include 'pages/footer.html' with contato_email='exemplo@email.com' only %}
-    <script src="{% static 'pages/js/main.js' %}"></script>
-</body>
-
-</html>
+{% block title %}Página Inicial{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row align-items-center">
+        <div class="col-me-6 w-50">
+            <img src="{% static 'img/ivopitz.jpg' %}" alt="Descrição da imagem" class="img-fluid w-75">
+        </div>
+        <div class="col-md-6">
+            <h2>Sobre Ivo Pitz</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada quam ut arcu fermentum, et
+                cursus sapien scelerisque. Integer ultrices, nisi vel facilisis rhoncus, libero massa accumsan massa, et
+                fermentum nisi eros vel metus. Vestibulum euismod nunc ut orci posuere, non dictum elit ultricies.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
