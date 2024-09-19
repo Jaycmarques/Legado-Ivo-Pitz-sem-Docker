@@ -1,14 +1,22 @@
-<!-- pages/index.html -->
 {% extends "pages/base.html" %}
 
-{% block title %}Minha Árvore Genealógica{% endblock %}
-
-{% block extra_head %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'familytree/css/familytree.css' %}">
-{% endblock %}
+{% block title %}Árvore Genealógica{% endblock %}
 
 {% block content %}
-<h2>Bem-vindo à Minha Árvore Genealógica</h2>
-<p>Conteúdo da página inicial do familytree.</p>
+<h1 class="text-center my-4">Árvore Genealógica</h1>
+<div class="row justify-content-center">
+    {% for member in family_members %}
+    <div class="col-md-3">
+        <div class="card text-center mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'familytree:familytree_detail' %}?id={{ member.id }}">
+                        {{ member.name }}</a></h5>
+                {% if member.partner %}
+                <p class="card-text">Parceiro: {{ member.partner }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

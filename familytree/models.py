@@ -24,6 +24,9 @@ class FamilyMember(models.Model):
     def __str__(self):
         return f'{self.id} -- {self.name}'
 
+    def children(self):
+        return Relationship.objects.filter(parent=self)
+
 
 class Relationship(models.Model):
     parent = models.ForeignKey(FamilyMember, related_name='parent', on_delete=models.PROTECT)

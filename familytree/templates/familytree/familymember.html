@@ -1,14 +1,31 @@
-<!-- familytree/detail.html -->
+<!-- familytree/familymember.html -->
 {% extends "pages/base.html" %}
 
 {% block title %}Detalhes do Membro da Família{% endblock %}
 
-{% block extra_head %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'familytree/css/familytree.css' %}">
-{% endblock %}
-
 {% block content %}
-<h2>Detalhes do Membro da Família</h2>
-<p>Conteúdo da página de detalhes do familytree.</p>
+<h2 class="text-center">{{ member.name }}</h2>
+{% if member.partner %}
+<p>Parceiro: {{ member.partner }}</p>
+{% endif %}
+<p><strong>Mãe:</strong>
+    {% if member.divorced_parent %}
+    {{ member.divorced_parent }}
+    {% else %}
+    Não informado
+    {% endif %}
+</p>
+
+<h3>Filhos:</h3>
+<ul>
+    {% if children %}
+    {% for relationship in children %}
+    <li>{{ relationship.child.name }} (ID: {{ relationship.child.id }})</li>
+    {% endfor %}
+    {% else %}
+    <li>Sem filhos registrados.</li>
+    {% endif %}
+</ul>
+
+<a href="{% url 'familytree:familytree_index' %}" class="btn btn-primary">Voltar à Árvore Genealógica</a>
 {% endblock %}
