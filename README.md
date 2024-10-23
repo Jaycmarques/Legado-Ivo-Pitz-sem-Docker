@@ -12,7 +12,7 @@ Developed a personal website for a friend using Django in an engaging and visual
 6. [Repository](#repository)
 
 ## Project Description
-This project is a personal website developed to feature various content such as hobbies, interests, and personal projects. The website uses Django for backend development and is styled with Bootstrap and custom CSS to create a clean and engaging design. The goal was to provide an intuitive, user-friendly experience while ensuring accessibility across devices.
+This project is a personal website developed to feature personal projects and interests. The website uses Django for backend development and is styled with Bootstrap and custom CSS to create a clean and engaging design. The goal was to provide an intuitive, user-friendly experience while ensuring accessibility across devices.
 
 ## Technologies
 - **Python**
