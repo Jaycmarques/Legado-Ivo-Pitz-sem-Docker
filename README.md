@@ -3,8 +3,6 @@
 
 Developed a personal website for a friend using Django in an engaging and visually appealing layout.
 
-![Website Screenshot](link-para-screenshot.png) <!-- Adicione um link para uma imagem se quiser -->
-
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Technologies](#technologies)
