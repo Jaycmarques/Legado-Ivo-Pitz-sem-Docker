@@ -1,22 +1,30 @@
 <footer class="bg-light text-dark mt-4">
     <div class="container py-4">
         <div class="row">
-            <div class="col-md-6 mb-4 mb-md-0">
+            <div class="col-md-6 mb-0 mb-md-0">
                 <h5 class="text-uppercase">Entre em Contato</h5>
                 <address>
-                    <p>+55 12 997-411-855</p>
-                    <p>
-                        <a href="mailto:diogo@email.com" class="text-dark" style="text-decoration: none;">
-                            diogo@email.com
-                        </a>
-                    </p>
+                    <ul class="list-unstyled m-0">
+                        <li>
+                            <p class="navbar-brand" style="margin-bottom: 5px;">Telefone: +55 12 997-411-855</p>
+                        </li>
+                        <li>
+                            <a class="navbar-brand" href="mailto:diogo@email.com" class="text-dark"
+                                style="text-decoration: none; margin-bottom: 0;">
+                                E-mail: diogo@email.com
+                            </a>
+                        </li>
+                    </ul>
                 </address>
             </div>
-            <div class="col-md-6 mb-4 mb-md-0 d-flex flex-column align-items-start">
-                <h5 class="text-uppercase mb-3">Links Úteis</h5>
+            <div class="col-md-6 mb-0 mb-md-0 d-flex flex-column align-items-start">
+                <h5 class="text-uppercase">Links Úteis</h5>
                 <ul class="list-unstyled m-0">
                     <li>
                         <a class="navbar-brand" href="{% url 'familytree:familytree_index' %}">Árvore Genealógica</a>
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="http://www.ivopitz.pro.br/">Professor Ivo Pitz</a>
                     </li>
                 </ul>
             </div>
