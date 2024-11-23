@@ -16,21 +16,23 @@ class FamilyMember(models.Model):
     displaying Steve on the tree under John's name we want to display
     "Steve (son of Jessica) rather than simply Steve."
     """
-    id = models.CharField(max_length=100, primary_key=True)
-    name = models.CharField(max_length=100)
-    partner = models.CharField(max_length=100, blank=True, null=True)
-    divorced_parent = models.CharField(max_length=100, blank=True, null=True)
+    id = models.CharField(max_length=255, primary_key=True)
+    name = models.CharField(max_length=255)
+    partner = models.CharField(max_length=255, blank=True, null=True)
+    divorced_parent = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return f'{self.id} -- {self.name}'
 
-    def children(self):
-        return Relationship.objects.filter(parent=self)
+    def get_children(self):
+        # Filtra as relações e retorna apenas os filhos
+        relationships = Relationship.objects.filter(parent=self)
+        return [rel.child for rel in relationships]
 
 
 class Relationship(models.Model):
-    parent = models.ForeignKey(FamilyMember, related_name='parent', on_delete=models.PROTECT)
-    child = models.ForeignKey(FamilyMember, related_name='child', on_delete=models.PROTECT)
+    parent = models.ForeignKey(FamilyMember, related_name='children', on_delete=models.PROTECT)
+    child = models.ForeignKey(FamilyMember, related_name='parents', on_delete=models.PROTECT)
 
     def __str__(self):
         return f'{self.parent.name} -> {self.child.name}'

@@ -5,48 +5,61 @@ from familytree.models import FamilyMember, Relationship
 class Command(BaseCommand):
     help = 'Populate family tree from familyData.txt'
 
-    def handle(self, *args, **kwargs):
+    def add_arguments(self, parser):
+        parser.add_argument('file_path', type=str, help='Path to the family data file')
+
+    def handle(self, *args, **options):
         family = []
-        with open('/home/jcmarques/.ssh/Legado-Ivo-Pitz/familytree/familyData.txt') as file:
-            lines = file.readlines()
-            for line in lines:
-                parts = line.strip().split(" - ")
-                id = parts[0]
-                name = parts[1].split(",")[0].strip()
-                partner_name = parts[1].split(",")[1].strip() if len(parts[1].split(",")) > 1 else None
-                married = line.lower().replace("casada", "casado")
-                married = married.replace("-", ",")
-                married = married.lower().split("casado com")
+        file_path = options['file_path']  # Get the file path passed as argument
+        try:
+            with open(file_path) as file:
+                lines = file.readlines()
+                for line in lines:
+                    parts = line.strip().split(" - ")
+                    id = parts[0]
+                    name = parts[1].split(",")[0].strip()
+                    partner_name = parts[1].split(",")[1].strip() if len(parts[1].split(",")) > 1 else None
+                    married = line.lower().replace("casada", "casado")
+                    married = married.replace("-", ",")
+                    married = married.lower().split("casado com")
 
-                if len(married) > 1:
-                    married = married[1].split(",")[0]
-                    partner_name = married.title().strip()
-                try:
-                    # Tenta buscar o FamilyMember pelo id
-                    member = FamilyMember.objects.get(id=id)
-                    # Se encontrado, atualiza os campos relevantes
-                    member.name = name
-                    member.partner = partner_name
-                    member.save()
-                except FamilyMember.DoesNotExist:
-                    # Se não existir, cria um novo FamilyMember
-                    member = FamilyMember.objects.create(id=id, name=name, partner=partner_name)
+                    if len(married) > 1:
+                        married = married[1].split(",")[0]
+                        partner_name = married.title().strip()
 
-                family.append(member)
+                    try:
+                        # Try to find the FamilyMember by id
+                        member = FamilyMember.objects.get(id=id)
+                        # If found, update the relevant fields
+                        member.name = name
+                        member.partner = partner_name
+                        member.save()
+                    except FamilyMember.DoesNotExist:
+                        # If not found, create a new FamilyMember
+                        member = FamilyMember.objects.create(id=id, name=name, partner=partner_name)
+
+                    family.append(member)
+
+        except FileNotFoundError:
+            self.stderr.write(self.style.ERROR(f"File not found: {file_path}"))
+            return
+        except Exception as e:
+            self.stderr.write(self.style.ERROR(f"Error reading file: {str(e)}"))
+            return
 
         for parent in family:
             parent_id = parent.id
             for child in family:
                 child_id = child.id
-                # Verifica se o ID do filho segue o formato do pai
+                # Check if the child's ID starts with the parent's ID
                 if child_id.startswith(f"{parent_id}."):
                     try:
-                        # Extrai o número do filho do ID
+                        # Extract the child number from the ID
                         child_number = int(child_id[len(parent_id) + 1:])
                         if child_number >= 1:
                             Relationship.objects.create(parent=parent, child=child)
                     except ValueError:
-                        # Se não for um número válido, ignora o ID
+                        # If not a valid number, ignore the ID
                         continue
 
         self.stdout.write(self.style.SUCCESS('Successfully populated family tree'))

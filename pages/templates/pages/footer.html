@@ -12,11 +12,12 @@
                     </p>
                 </address>
             </div>
-            <div class="col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Links Úteis</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-dark text-decoration-none">Igreja Católica</a></li>
-                    <li><a href="#" class="text-dark text-decoration-none">Projeto MATAR</a></li>
+            <div class="col-md-6 mb-4 mb-md-0 d-flex flex-column align-items-start">
+                <h5 class="text-uppercase mb-3">Links Úteis</h5>
+                <ul class="list-unstyled m-0">
+                    <li>
+                        <a class="navbar-brand" href="{% url 'familytree:familytree_index' %}">Árvore Genealógica</a>
+                    </li>
                 </ul>
             </div>
         </div>

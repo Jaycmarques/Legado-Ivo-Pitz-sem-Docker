@@ -12,20 +12,31 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+dotenv_path = os.path.join(BASE_DIR, 'dotenv_files', '.env')
+load_dotenv(dotenv_path)
+
+
+
+# DOTENV
+load_dotenv(BASE_DIR.parent / 'dotenv_files' / '.env', override=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@(1ad%#xn0^#ih07-3n-u5q9xr9&j_02#vuux71*ixksaiu92#'
+SECRET_KEY = "!l@5fp93&z8w#tlg5+u4z_)vq9k1_h3r13+q$5d7qk7npz#6t2"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.getenv('DEBUG', 0)))
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jcmarques.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    h.strip() for h in os.getenv('ALLOWED_HOSTS', '127.0.0.1, localhost').split(',') if h.strip()
+]
 
 
 # Application definition
@@ -81,9 +92,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }}
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': 'db',  # Nome do serviço no docker-compose
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation

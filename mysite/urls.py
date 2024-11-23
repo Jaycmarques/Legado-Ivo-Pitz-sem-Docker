@@ -22,9 +22,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', pages_views.home_view, name='home'),  # Home page
+    path('ivo-pitz', pages_views.home_view, name='home'),  # Home page
     path('admin/', admin.site.urls),  # Admin do Django
-    path('familytree/', include('familytree.urls')),
+    path('', include('familytree.urls')),
     path('pages/', include('pages.urls')),
 ]
 
