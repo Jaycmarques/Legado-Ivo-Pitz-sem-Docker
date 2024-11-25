@@ -29,8 +29,7 @@
                 {{ member.name }} (ID: {{ member.id }})
             </button>
         </h2>
-        <div id="collapse{{ member.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ member.id }}"
-            data-bs-parent="#familyTreeAccordion">
+        <div id="collapse{{ member.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ member.id }}">
             <div class="accordion-body">
                 <p><strong>Nome:</strong> {{ member.name }}</p>
                 {% if member.partner %}
@@ -55,8 +54,8 @@
                             {{ child.name }} (ID: {{ child.id }})
                         </button>
                     </h2>
-                    <div id="collapse{{ child.name }}" class="accordion-collapse collapse"
-                        aria-labelledby="heading{{ child.id }}" data-bs-parent="#familyTreeAccordion">
+                    <div id="collapse{{ child.id }}" class="accordion-collapse collapse"
+                        aria-labelledby="heading{{ child.id }}">
                         <div class="accordion-body">
                             <p><strong>Nome:</strong> {{ child.name }}</p>
                             {% if child.partner %}

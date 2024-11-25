@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import FamilyMember, Relationship
-from django.db.models import Q
+from django.db.models import Q, Prefetch
 
 
 def familytree(request):
@@ -21,14 +21,19 @@ def detail(request):
 def search_family_member(request):
     search_value = request.GET.get('search', '').strip()
     
-    # Busca nos campos relevantes
+    # Prefetch os filhos (e netos, se necessário)
+    children_prefetch = Prefetch('children', queryset=Relationship.objects.select_related('child'))
+    
+    # Realizar a busca nos campos relevantes e carregar filhos
     family_members = (
-        FamilyMember.objects.filter(
+        FamilyMember.objects
+        .filter(
             Q(id__icontains=search_value) |
             Q(name__icontains=search_value) |
             Q(partner__icontains=search_value) |
             Q(divorced_parent__icontains=search_value)
         )
+        .prefetch_related(children_prefetch)  # Carregar os filhos dos membros
     )
 
     return render(
