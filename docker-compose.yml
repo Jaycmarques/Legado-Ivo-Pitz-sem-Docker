@@ -11,11 +11,11 @@ services:
     env_file:
       - ./dotenv_files/.env # Importa variáveis de ambiente do arquivo .env.
     depends_on:
-      - db # Garante que o banco de dados seja iniciado antes do Django.
+      - psql # Garante que o banco de dados seja iniciado antes do Django.
     command: >
       sh -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
 
-  db:
+  psql:
     container_name: postgres
     image: postgres:13-alpine
     volumes:
