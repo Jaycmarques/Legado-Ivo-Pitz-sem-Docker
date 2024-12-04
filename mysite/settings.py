@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'debug_toolbar',
     'axes',
     'pages',
     'familytree',
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'axes.middleware.AxesMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -170,3 +172,12 @@ AXES_ENABLED = True
 AXES_FAILURE_LIMIT = 3
 AXES_COOLOFF_TIME = 1  # 1 Hora
 AXES_RESET_ON_SUCCESS = True
+
+INTERNAL_IPS = [
+    "127.0.0.1",        # Loopback para acessos locais
+    "192.168.0.119",    # IP da sua máquina na rede local
+    "172.17.0.1",       # IP interno do Docker
+    "172.18.0.1",       # IP interno do Docker
+    "172.19.0.1",       # IP interno do Docker
+]
+

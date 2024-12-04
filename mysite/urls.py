@@ -29,4 +29,14 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
+    # Import necessário para o Debug Toolbar
+    import debug_toolbar
+    
+    # Adiciona as rotas do Debug Toolbar ao urlpatterns existente
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]
+
+    # Adiciona rotas para servir arquivos de mídia durante o desenvolvimento
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
