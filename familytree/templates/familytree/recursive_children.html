@@ -1,0 +1,32 @@
+{% for child in children %}
+<div class="accordion-item">
+    <h2 class="accordion-header" id="heading{{ child.id }}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapse{{ child.id }}" aria-expanded="false" aria-controls="collapse{{ child.id }}">
+            {{ child.name }} (ID: {{ child.id }})
+        </button>
+    </h2>
+    <div id="collapse{{ child.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ child.id }}">
+        <div class="accordion-body">
+            <p><strong>Nome:</strong> {{ child.name }}</p>
+            {% if child.partner %}
+            <p><strong>Parceiro:</strong> {{ child.partner }}</p>
+            {% endif %}
+            <p><strong>Pai:</strong>
+                {% for parent in child.parents.all %}
+                {{ parent.name }}
+                {% empty %}
+                Não encontrado
+                {% endfor %}
+            </p>
+
+            <!-- Filhos do Filho -->
+            <div class="accordion" id="children-accordion-{{ child.id }}">
+                {% include "familytree/recursive_children.html" with children=child.get_children %}
+            </div>
+        </div>
+    </div>
+</div>
+{% empty %}
+<p>Sem filhos registrados.</p>
+{% endfor %}

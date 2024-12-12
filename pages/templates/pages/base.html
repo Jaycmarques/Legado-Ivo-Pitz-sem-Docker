@@ -9,6 +9,36 @@
     <link rel="icon" type="image/png" href="{% static 'img/favicon.PNG' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     {% block extra_head %}{% endblock %}
+
+    <style>
+        /* Garantir que a página ocupe toda a altura da tela */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* O corpo vai ocupar a altura mínima da tela e empurrar o rodapé para o final */
+        .main-content {
+            flex-grow: 1;
+            padding-bottom: 80px;
+            /* Espaço extra para o rodapé não sobrepor conteúdo */
+        }
+
+        /* Rodapé fixo ao final da tela */
+        footer {
+            margin-top: auto;
+            /* Isso empurra o rodapé para o final */
+            width: 100%;
+        }
+
+        /* Certifique-se de que o rodapé tenha uma altura razoável */
+        footer .container {
+            padding: 20px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,11 +62,14 @@
         </nav>
     </header>
 
-    <main class="container mt-4">
+    <!-- Conteúdo principal da página -->
+    <main class="container mt-4 main-content px-3">
         {% block content %}{% endblock %}
     </main>
 
+    <!-- Rodapé -->
     {% include 'pages/footer.html' with contato_email='exemplo@email.com' only %}
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

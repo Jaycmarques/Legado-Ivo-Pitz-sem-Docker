@@ -1,38 +1,32 @@
 from django.db import models
 
-
 class FamilyMember(models.Model):
     """
-    - This class handles information about family members
-     which are essential to build the tree connections.
-    - The id field follows the format a.b.c.d(...)
-    - The children attribute consists of a list of children
-    - Partner corresponds to the current partner of the
-    family member in the blood line.
-    - The divorcedParent attribute is used to handle situations
-    where a member has a child from a previous marriage/relationship,
-    so it is associated with the child's name (i.e: John had a son with
-    Jessica called Steve, but now John is married to Katherin. So when
-    displaying Steve on the tree under John's name we want to display
-    "Steve (son of Jessica) rather than simply Steve."
+    - Esta classe lida com informações sobre membros da família,
+      essenciais para construir as conexões na árvore genealógica.
+    - O campo `id` segue o formato a.b.c.d(...)
+    - O atributo `children` é uma lista de filhos.
+    - O atributo `partner` corresponde ao parceiro atual do membro da família.
+    - O atributo `divorced_parent` é utilizado para tratar situações em que
+      um membro tem um filho de um casamento/relacionamento anterior.
     """
     id = models.CharField(max_length=255, primary_key=True)
-    name = models.CharField(max_length=255)
-    partner = models.CharField(max_length=255, blank=True, null=True)
-    divorced_parent = models.CharField(max_length=255, blank=True, null=True)
+    name = models.CharField(max_length=255, db_index=True)
+    partner = models.CharField(max_length=255, blank=True, null=True, db_index=True) 
+    divorced_parent = models.CharField(max_length=255, blank=True, null=True, db_index=True) 
 
     def __str__(self):
         return f'{self.id} -- {self.name}'
 
     def get_children(self):
-        # Filtra as relações e retorna apenas os filhos
         relationships = Relationship.objects.filter(parent=self)
         return [rel.child for rel in relationships]
 
 
 class Relationship(models.Model):
-    parent = models.ForeignKey(FamilyMember, related_name='children', on_delete=models.PROTECT)
-    child = models.ForeignKey(FamilyMember, related_name='parents', on_delete=models.PROTECT)
+    parent = models.ForeignKey(FamilyMember, related_name='children', on_delete=models.CASCADE, db_index=True)
+    child = models.ForeignKey(FamilyMember, related_name='parents', on_delete=models.CASCADE, db_index=True)
+
 
     def __str__(self):
         return f'{self.parent.name} -> {self.child.name}'
