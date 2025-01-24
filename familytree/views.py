@@ -49,8 +49,7 @@ def search_family_member(request):
     family_members = FamilyMember.objects.filter(
     Q(id__icontains=search_value) |
     Q(name__icontains=search_value) |
-    Q(info__icontains=search_value) |
-    Q(divorced_parent__icontains=search_value)
+    Q(info__icontains=search_value)
 ).prefetch_related(
     Prefetch('children', queryset=Relationship.objects.select_related('child'))
 ).distinct()
