@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from .models import FamilyMember, Relationship
-from django.db.models import Q, Prefetch
+from django.db.models import Q, Prefetch, Func, Value
 from django.views.decorators.cache import cache_page
 from django.http import JsonResponse
+from django.db.models.functions import Lower
 
+class Unaccent(Func):
+    function = 'unaccent'
 
 @cache_page(60*15)
 def familytree(request):
@@ -45,21 +48,26 @@ def detail(request):
 
 def search_family_member(request):
     search_value = request.GET.get('search', '').strip()
-    
-    family_members = FamilyMember.objects.filter(
-    Q(id__icontains=search_value) |
-    Q(name__icontains=search_value) |
-    Q(info__icontains=search_value)
-).prefetch_related(
-    Prefetch('children', queryset=Relationship.objects.select_related('child'))
-).distinct()
+
+    family_members = FamilyMember.objects.annotate(
+        name_unaccent=Unaccent(Lower('name')),
+        info_unaccent=Unaccent(Lower('info')),
+        id_unaccent=Unaccent('id')
+    ).filter(
+        Q(id_unaccent__icontains=Unaccent(Value(search_value))) |
+        Q(name_unaccent__icontains=Unaccent(Value(search_value))) |
+        Q(info_unaccent__icontains=Unaccent(Value(search_value)))
+    ).prefetch_related(
+        Prefetch('children', queryset=Relationship.objects.select_related('child'))
+    ).distinct()
 
     return render(
         request,
-        'familytree/index.html',  
+        'familytree/index.html',
         {
             'family_members': family_members,
             'search_value': search_value,
         }
     )
+
 
