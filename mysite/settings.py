@@ -175,7 +175,7 @@ AXES_RESET_ON_SUCCESS = True
 
 INTERNAL_IPS = [
     "127.0.0.1",        # Loopback para acessos locais
-    "192.168.0.119",    # IP da sua máquina na rede local
+    "192.168.10.22",    # IP da sua máquina na rede local
     "172.17.0.1",       # IP interno do Docker
     "172.18.0.1",       # IP interno do Docker
     "172.19.0.1",       # IP interno do Docker

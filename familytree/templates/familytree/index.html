@@ -29,17 +29,10 @@
         </h2>
         <div id="collapse{{ member.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ member.id }}">
             <div class="accordion-body">
-                <p><strong>Nome:</strong> {{ member.name }}</p>
-                {% if member.partner %}
-                <p><strong>Parceiro:</strong> {{ member.partner }}</p>
+                <!-- <p><strong>Nome:</strong> {{ member.name }}</p> -->
+                {% if member.info %}
+                <p>{{ member.info }}</p>
                 {% endif %}
-                <p><strong>Pai:</strong>
-                    {% for parent in member.parents.all %}
-                    {{ parent.name }}
-                    {% empty %}
-                    Não encontrado
-                    {% endfor %}
-                </p>
 
                 <!-- Filhos do Membro -->
                 <div class="accordion" id="children-accordion-{{ member.id }}">

@@ -12,8 +12,7 @@ class FamilyMember(models.Model):
     """
     id = models.CharField(max_length=255, primary_key=True)
     name = models.CharField(max_length=255, db_index=True)
-    partner = models.CharField(max_length=255, blank=True, null=True, db_index=True) 
-    divorced_parent = models.CharField(max_length=255, blank=True, null=True, db_index=True) 
+    info = models.CharField(max_length=1000, blank=True, null=True, db_index=True) 
 
     def __str__(self):
         return f'{self.id} -- {self.name}'

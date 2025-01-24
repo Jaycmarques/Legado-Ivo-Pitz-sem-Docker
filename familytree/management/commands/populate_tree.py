@@ -17,26 +17,19 @@ class Command(BaseCommand):
                 for line in lines:
                     parts = line.strip().split(" - ")
                     id = parts[0]
-                    name = parts[1].split(",")[0].strip()
-                    partner_name = parts[1].split(",")[1].strip() if len(parts[1].split(",")) > 1 else None
-                    married = line.lower().replace("casada", "casado")
-                    married = married.replace("-", ",")
-                    married = married.lower().split("casado com")
-
-                    if len(married) > 1:
-                        married = married[1].split(",")[0]
-                        partner_name = married.title().strip()
+                    name = parts[1]
+                    info = parts[2]
 
                     try:
                         # Try to find the FamilyMember by id
                         member = FamilyMember.objects.get(id=id)
                         # If found, update the relevant fields
                         member.name = name
-                        member.partner = partner_name
+                        member.info = info
                         member.save()
                     except FamilyMember.DoesNotExist:
                         # If not found, create a new FamilyMember
-                        member = FamilyMember.objects.create(id=id, name=name, partner=partner_name)
+                        member = FamilyMember.objects.create(id=id, name=name, info=info)
 
                     family.append(member)
 

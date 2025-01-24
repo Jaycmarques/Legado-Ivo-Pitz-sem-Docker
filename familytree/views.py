@@ -5,7 +5,7 @@ from django.views.decorators.cache import cache_page
 from django.http import JsonResponse
 
 
-# @cache_page(60*15)
+@cache_page(60*15)
 def familytree(request):
     # Carregando apenas os membros de primeiro nível
     family_members = FamilyMember.objects.filter(parents__isnull=True).prefetch_related(
@@ -49,7 +49,7 @@ def search_family_member(request):
     family_members = FamilyMember.objects.filter(
     Q(id__icontains=search_value) |
     Q(name__icontains=search_value) |
-    Q(partner__icontains=search_value) |
+    Q(info__icontains=search_value) |
     Q(divorced_parent__icontains=search_value)
 ).prefetch_related(
     Prefetch('children', queryset=Relationship.objects.select_related('child'))
