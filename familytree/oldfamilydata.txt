@@ -1,223 +1,113 @@
 1.2.11 - Francisco Pitz - nascido em São Pedro de Alcântara, em 1875, e falecido em 01 de setembro de 1931. Casado com Luísa (Elisa) Gesser Pitz, nascida em São Pedro de Alcântara em 1880 e falecida em 1952, filha de Pedro Gesser, nascido em fevereiro de 1843 e falecido em 21 de novembro de 1915, e Luísa Hoffmann, nascida em 25 de abril de 1845. Neta de Johann Gesser, nascido em 1812 e falecido em 1885, e Katharina Klasen, e de Augustinus Hoffmann e Maria Elisabetha Ostermann. 
-
 1.2.11.1 -  Fridolino Pitz - nascido em 02 de maio de 1898, em São Pedro de Alcântara; falecido em 14 de maio de 1969, em Santo Amaro da Imperatriz. Casado com Guilhermina Schmitz, nascida em 30 de julho de 1903, em São Pedro de Alcântara e falecida em 28 de junho de 1969, em Santo Amaro da Imperatriz.
-
 1.2.11.1.1 - Armando José Pitz - nascido em 25 de fevereiro de 1925, em São Pedro de Alcântara - SC e falecido em 05 de junho de 1998. Foi sepultado em São Pedro de Alcântara - SC. Casado com Mônica Hillesheim, nascida em 30 de julho de 1929, em São Pedro de Alcântara.
-
 1.2.11.1.2 - Celso Pitz - nascido em 23 de outubro de 1926, em São Pedro de Alcântara - SC.
-
 1.2.11.1.3 - Valda Pitz - nascida em São Pedro de Alcântara – SC, em 01 de julho de 1927; falecida em Blumenau, em 21 de junho de 2000. Casada com Paulo Gorges, nascido em Perdidas (atual Betânia) – Angelina - SC, em 09 de novembro de 1928; falecido em 30 de julho de 1996, em Angelina.
-
 1.2.11.1.3.1 - Rogério Gorges - nascido em 18 de setembro de 1952, em Angelina; falecido em 02 de fevereiro de 1994 em São José - SC.
-
 1.2.11.1.3.2 - Alcides Gorges - nascida em 18 de dezembro de 1954, em Angelina - SC.
-
 1.2.11.1.3.3 - José Paulo Gorges -  nascido em 27 de maio de 1956 em Angelina - SC. Casado em 11 de maio de 1985, em Angelina, com Célia Ana Laurentino Gorges, filha de José Sebastião Laurentino e Maria Heloisa Martins. Têm as seguintes filhas:
-
 1.2.11.1.3.3.1 - Pricila de Lourdes Gorges - nascida em 18 de fevereiro de 1986, em Angelina - SC.
-
 1.2.11.1.3.3.2 - Indianara Gorges - nascida em 04 de junho de 1987, em Angelina - SC.
-
 1.2.11.1.3.4 - Valmor Gorges - nascido em Angelina - SC, em 1958; falecido em 1960, em Angelina.
-
 1.2.11.1.3.5 - Maria Terezinha Gorges - nascida em 19 de abril de 1960, em Angelina - SC. Casada com José Valério Vieira, nascido em 08 de maio de 1056, em Antônio Carlos - SC, e falecido em 17 de dezembro de 2009. Tiveram três filhos:
-
 1.2.11.1.3.5.1 - Fabiano Henrique Vieira - nascido em Florianópolis - SC, no dia 16 de dezembro de 1979. Casado com Francilene Gracieli Kunradi Vieira, nascida em Florianópolis - SC no dia 14/08/1982, filha de Luzia Maria Junkes Kunradi e de José Plácido Kunradi.
-
 1.2.11.1.3.5.2 - Roberto Vieira, nascido em Florianópolis - SC, no dia 21 de setembro de 1982. Casado com Margarete de Oliveira Vieira, filha de Reni de Oliveira Vieira e Laide Maciel de Oliveira. Eles têm um filho:
-
 1.2.11.1.3.5.2.1 - Daniel de Oliveira Vieira - nascido em Jaraguá do Sul - SC no dia 13 de setembro de 2010.
-
 1.2.11.1.3.5.3 - Renato Vieira - nascido em Florianópolis - SC, no dia 21 de setembro de 1982.
-
 1.2.11.1.3.6 - Valdete Gorges - nascida em 21 de abril de 1962, em Angelina - SC.
-
 1.2.11.3.1.7 - Francisco Gorges - nascido em 03 de dezembro de 1964, em Angelina - SC.
-
 1.2.11.1.3.8 - Luiz Carlos Gorges - nascido em 15 de dezembro de 1966, em Angelina - SC.
-
 1.2.11.1.3.9 - Margarete Gorges - nascida em 24 de setembro 1968, em Angelina; falecida em Florianópolis - SC, em 14 de Agosto de 1995. Teve uma filha com Paulo da Silveira:
-
 1.2.11.1.3.9.1 - Ana Paula Gorges da Silveira - nascida em Florianópolis - SC, no dia 09 de janeiro de 1990.
-
 1.2.11.1.3.10 - Zilma Gorges - nascida em 1969, em Angelina - SC.
-
 1.2.11.1.4 - Aldo Pitz - nascido 05 de setembro de 1929, em São Pedro de Alcântara - SC. Casado com Clara Schmitz, nascida em 06 de setembro de 1932, em Rancho Queimado - SC.
-
 1.2.11.1.5 - Maria Pitz - nascida em 11 de março de 1931, em São Pedro de Alcântara - SC. Casada com Marcolino Richartz, nascido em torno de 1931, em Santa Catarina.
-
 1.2.11.1.6 - Tita Christina Pitz - nascida em 30 de janeiro de 1933, em São Pedro de Alcântara - SC; casada com Nicolau Schmitz, nascido em torno de 1933, em Santa Catarina.
-
-1.2.11.1.7 - Verônica Pitz - nascida em 04 de agosto de 1943 e falecida no mesmo dia, em São Pedro de Alcântara - SC.
-
+1.2.11.1.7 - Verônica Pitz, nascida em 04 de agosto de 1943 e falecida no mesmo dia, em São Pedro de Alcântara - SC.
 1.2.11.2 - Virgílio Pitz - casado com Juliana Petri Pitz, nascida em 06 de setembro de 1905, filha de Nicolau Petri e Filomena Schmitz.
-
 1.2.11.3 -  Arnoldo Pitz - nascido no Louro, Antônio Carlos - SC, em 08 de agosto de 1901. Falecido em 30 de junho de 1972. Está sepultado no cemitério do Louro. Casado, em primeiras núpcias, em São Pedro de Alcântara, no dia 01 de maio de 1926, com Augustinha Gesser, nascida em 1903, filha de Matias Gesser e Maria Schmitt. Casou-se, em segundas núpcias com Verônica Petri Pitz, nascida em 10 de novembro de 1913, filha de Nicolau Petri e Filomena Schmitz, falecida em 11 de abril de 1976. Está sepultada no cemitério do Louro, Antônio Carlos - SC.
-
 1.2.11.3.1 - Valdemiro Pitz - casado com Dilma Pitz
-
 1.2.11.3.1.1 - Elza Maria Pitz Leite - casada com Arlindo José Leite
-
 1.2.11.3.1.1.1 - Éverton Leite
-
 1.2.11.3.1.2 - Maria de Lourdes Pitz Junkes - casada com Jose Salésio Junkes
-
 1.2.11.3.1.2.1 - Juliano Junkes
-
 1.2.11.3.1.2.2 - Tiago Junkes
-
 1.2.11.3.1.3 - José Salésio Pitz
-
 1.2.11.3.1.3.1 - Paula Pitz
-
 1.2.11.3.1.3.2 - Deyvid Pitz
-
 1.2.11.3.1.4 - Rute Pitz Schmitt - casada com Rubens Schmitt
-
 1.2.11.3.1.4.1 - Rose Schmitt
-
 1.2.11.3.1.4.2 - Ricardo Schmitt
-
 1.2.11.3.1.4.3 - Rúbia Schmitt
-
 1.2.11.3.1.5 - Salete Pitz Coelho - casada com Agostinho Coelho
-
 1.2.11.3.1.5.1 - Juliana Coelho
-
 1.2.11.3.1.5.2 - Leandro Coelho
-
 1.2.11.3.1.6 - Jonas Rogério Pitz 
-
 1.2.11.3.1.6.1 - Cristiane Pitz
-
 1.2.11.3.1.6.2 - Priscila Pitz
-
 1.2.11.3.1.6.3 - Jonas Rogério Pitz Junior
-
 1.2.11.3.1.7 - Marlene Pitz Boni
-
 1.2.11.3.1.7.1 - Daiane Boni
-
 1.2.11.3.1.7.2 - Daniela Boni
-
 1.2.11.3.1.8 - Jocélio Pitz - casado com Sonete Neis Pitz
-
 1.2.11.3.1.8.1 - Nicolle Pitz
-
 1.2.11.3.1.8.2 - Júlia Pitz
-
 1.2.11.3.1.9 - Pedro Paulo Pitz - casado com Janete Müller Pitz
-
 1.2.11.3.1.9.1 - Joice Müller Pitz
-
 1.2.11.3.1.9.2 - Pedro Müller Pitz
-
 1.2.11.3.1.10 - Jocélio Luiz Pitz
-
 1.2.11.3.1.11 - Paulo Cesar Pitz - casado com Aparecida Pitz
-
 1.2.11.3.1.11.1 - Luiz Felipe Pitz
-
-1.2.11.3.2 - José Luís Pitz - nascido no Louro - Antônio Carlos - SC, em 26 de junho de 1929, falecido no Louro em 26 de novembro de 2003. Está sepultado no cemitério do Louro. Casado com Elfrida Florentina Hoffmann Pitz
-
+1.2.11.3.2 - José Luís Pitz, nascido no Louro - Antônio Carlos - SC, em 26 de junho de 1929, falecido no Louro em 26 de novembro de 2003. Está sepultado no cemitério do Louro. Casado com Elfrida Florentina Hoffmann Pitz
 1.2.11.3.2.1 - Geraldo Pitz - casado com Maria Eni May Pitz
-
 1.2.11.3.2.1.1 - Everaldo Pitz - casado com Munick Hoffmann
-
 1.2.11.3.2.1.2 - Éverton Pitz
-
 1.2.11.3.2.2 - Elziário José Pitz - casado com Solange Libânia Pitz
-
 1.2.11.3.2.2.1 - Fernando Pitz
-
 1.2.11.3.2.2.2 - Franciéli Pitz
-
 1.2.11.3.2.2.2.1 - Felipe Pitz
-
 1.2.11.3.2.2.2.2 - Bruna Pitz
-
 1.2.11.3.2.2.3 - Franciane Pitz
-
 1.2.11.3.2.2.4 - Frederico Pitz
-
 1.2.11.3.2.3 - Carlito Antônio Pitz - casado com Jessoni Schmitt Pitz
-
 1.2.11.3.2.3.1 - Michele Schmitt Pitz
-
 1.2.11.3.2.3.2 - Marcos Pitz
-
 1.2.11.3.2.3.3 - Mateus Pitz
-
 1.2.11.3.2.4 - José Inácio Pitz - casado com Rita de Cássia Mendes Pitz
-
 1.2.11.3.2.4.1 - Rafael Pitz
-
 1.2.11.3.2.4.2 - Gabriel Pitz
-
 1.2.11.3.2.5 - Alfredo Pitz - casado com Ilza Maria Mendes Pitz
-
 1.2.11.3.2.5.1 - Ânderson Pitz
-
 1.2.11.3.2.5.2 - Ariel Pitz
-
 1.2.11.3.2.6 - Mário César Pitz - casado com Eni Kremer Pitz
-
 1.2.11.3.2.6.1 - Róbson Pitz
-
 1.2.11.3.2.6.2 - Romário Pitz
-
 1.2.11.3.2.6.3 - Ronaldo Pitz
-
 1.2.11.3.2.7 - Rudnei Pitz - casado com Zélia Kons Pitz
-
 1.2.11.3.2.7.1 - João Paulo Pitz
-
 1.2.11.3.2.7.2 - José Vítor Pitz
-
 1.2.11.3.2.8 - Joceliane Pitz Vieira - casada com Sinézio Higínio Vieira
-
 1.2.11.3.2.8.1 - Fernanda Vieira
-
 1.2.11.3.2.8.2 - Caroline Vieira
-
 1.2.11.3.2.8.3 - Isadora Vieira
-
 1.2.11.3.2.9 - Jucélia Pitz Coelho - casada com Célio Coelho
-
 1.2.11.3.2.9.1 - Guilherme Pitz Coelho
-
 1.2.11.3.2.9.2 - Felipe Pitz Coelho
-
 1.2.11.3.3 - Judite Pitz - casada com José Raulino Junkes
-
 1.2.11.3.4 - Bernadete Pitz Junkes - nascida em Antônio Carlos-SC em 14/03/1935; faleceu em 05 de junho de 2016. Casada com Olegário João Junkes, nascido em Antônio Carlos-SC, em 09/05/1930; já falecido e sepultado no cemitério do Louro – Antônio Carlos/SC. Ele, filho de João Luiz Junkes (falecido) e Vitorina Maria Schweitzer (falecida). Veja também a Família de Olegário João Junckes, descendente também de Johanna Pitz.
-
 1.2.11.3.4.1 - José Carlos Junkes - nascido em Antônio Carlos-SC, em 30/08/1953; já falecido e sepultado no cemitério São Sebastião em Joinville-SC; era casado com Darci Matilde Junkes, nascida em Penha-SC, em 22/07/1953, e que é filha de Pedro José Jacinto e Matilde Leal Tavares Jacinto, ambos já falecidos e sepultados no cemitério São Sebastião em Joinville-SC
-
 1.2.11.3.4.1.1 - Nara Cristina Junkes - nascida em Joinville-SC, em 12/11/1976; casada com Denilson Fernando Canuto, nascido em Joinville-SC, em 15/07/1968
-
 1.2.11.3.4.1.1.1 - Murilo Junkes Canuto - nascido em Joinville-SC, em 20/08/2002
-
 1.2.11.3.4.1.1.2 - Matheus Junkes Canuto - nascido em Curitiba-PR, em 12/08/2008
-
 1.2.11.3.4.1.2 - Narjara Melissa Junkes - nascida em Joinville-SC, em 23/02/1981.
-
 1.2.11.3.4.1.3 - Natcha Betina Junkes - nascida em Joinville-SC, em 09/05/1983.
-
 1.2.11.3.4.2 - José Olegário Junkes - nascido em Antônio Carlos-SC em 30/08/1953; casado com Margareth Regina Junkes, nascida em Penha/SC, em 13/11/1956
-
 1.2.11.3.4.2.1 - Ricardo Alexandre Junkes - nascido em Joinville-SC, em 04/12/1976; casado com Débora Claudino Junkes, nascida em Mogi Mirim-SP, em 09/09/1972
-
 1.2.11.3.4.2.1.1 - Julia Camatari Junkes - nascida em Mogi Guaçu-SP, em 16/08/1996
-
 1.2.11.3.4.2.1.2 - Pedro Henrique Junkes - nascido em Mogi Guaçu-SP, em 10/09/2002
-
 1.2.11.3.4.2.1.3 - Laura Fernanda Junkes - nascida em Betim-MG em 23/06/2007
-
 1.2.11.3.4.2.2 - Rodrigo José Junkes - nascido em Blumenau-SC, em 21/09/1979
-
 1.2.11.3.4.2.3 - Gisele Patrícia Junkes - nascida em Blumenau-SC, em 02/03/1982
-
 1.2.11.3.4.2.4 - Ramon Felipe Junkes - nascido em Mogi Guaçu-SP, em 25/01/1988
 
 1.2.11.3.4.2.4.1 - Manuela Chaves Junkes - nascida em Mogi Guaçu-SP, em 23/11/2009
@@ -286,7 +176,7 @@
 
 1.2.11.7.1.1.2 - Luís Eduardo Schmitt - nascido em Antônio Carlos, no dia 14 de abril de 1996
 
-1.2.11.7.1.2 - João Ilmar Schmitt - nascido em Antônio Carlos-SC, no dia 05 de dezembro de 1963. Casado com Célia Junkes Schmitt, nascida em Antônio Carlos, no dia 15 de dezembro de 1970. Célia é filha de Agostinho Junkes e Valdina Terezinha Hack Junkes.
+1.2.11.7.1.2 - João Ilmar Schmitt, nascido em Antônio Carlos-SC, no dia 05 de dezembro de 1963. Casado com Célia Junkes Schmitt, nascida em Antônio Carlos, no dia 15 de dezembro de 1970. Célia é filha de Agostinho Junkes e Valdina Terezinha Hack Junkes.
 
 1.2.11.7.1.2.1 - Thiago Schmitt - nascido em Florianópolis-SC, no dia 29 de dezembro de 1994.
 
@@ -298,7 +188,7 @@
 
 1.2.11.7.1.3.1.1 - Davi Luiz Petri Junckes - nascido em 25/12/2015.
 
-1.2.11.7.1.3.2 - Gabriela Petri Reitz - nascida em 26/09/1992. Casada com Bernardo Wilvert Reitz, nascido em 04/01/1991. Filho de Francisco Bernardo Reitz e de Lurdete Maria Wilvert Reitz
+1.2.11.7.1.3.2 - Gabriela Petri Reitz, nascida em 26/09/1992. Casada com Bernardo Wilvert Reitz, nascido em 04/01/1991. Filho de Francisco Bernardo Reitz e de Lurdete Maria Wilvert Reitz
 
 1.2.11.7.1.3.2.1 - Maria Clara Petri Reitz - nascida em 28/10/2010.
 
@@ -414,7 +304,7 @@
 1.2.11.7.5.2 - Daniele Aparecida Pitz Bernardin de Andrade - nascida em Curitiba-PR, no dia 04 de junho de 1985. Casada com William de Cristo Bernardin de Andrade, nascido em 23 de julho de 1985, em Curitiba. Filho de Denise Bernardin de Andrade e Amauri [....].
 1.2.11.7.5.2.1 - Lucas Pitz Bernardin de Andrade - nascido em 04 de abril de 2017, em Curitiba-PR.
 1.2.11.7.5.2.2 - Tiago Pitz Bernardin de Andrade - nascido em 02 de setembro de 2018, em Curitiba-PR.
-1.2.11.7.5.3 - Diogo Berta Pitz - nascido em Curitiba-PR, no dia 09 de julho de 1990. Foi casado com Renata Leite Brunoro (2014-2018) e Ana Flávia Machado (2022-2024).
+1.2.11.7.5.3 - Diogo Berta Pitz - nascido em Curitiba-PR, no dia 09 de julho de 1990. Divorciado de Renata Leite Brunoro (2018) e Ana Flávia Machado (2024).
 
 1.2.11.7.6 - Luzia Pitz - nascida em Antônio Carlos-SC, no dia 24 de julho de 1948. Casada com  Neri Borges Laurentino, nascido em Agrolândia-SC, no dia 24 de fevereiro de 1950. Filho de Waldomiro Borges Laurentino e Otília D'Ávila Borges. Com o casamento passou a chamar-se Luzia Borges Laurentino.
 
@@ -435,7 +325,7 @@
 1.2.11.7.9.1 - Fábio Pitz - nascido em Curitiba, no dia 20.12.81.
 1.2.11.7.9.2 - Fernanda Pitz - nascida em Curitiba, no dia 10.05.85.
 1.2.11.7.10 - Valdir Pitz - nascido em Antônio Carlos no dia 03.02.1955. Falecido no dia 02 de novembro de 1976, em acidente no rio Nhundiaquara, em Morretes – PR.  Foi sepultado no cemitério de S. Pedro de Alcântara.
-1.2.11.7.11 - Osmar Pitz - nascido em Antônio Carlos, no dia 10 de janeiro de 1957. Casado com Nilva Junkes Pitz, nascida em S. Pedro de Alcântara, no dia 24 de abril de 1961. Filha de José Junkes e Maria Hoffmann.
+1.2.11.7.11 - Osmar Pitz, nascido em Antônio Carlos, no dia 10 de janeiro de 1957. Casado com Nilva Junkes Pitz, nascida em S. Pedro de Alcântara, no dia 24 de abril de 1961. Filha de José Junkes e Maria Hoffmann.
 1.2.11.7.11.1 - Cristiane Pitz - nascida em S. Pedro de Alcântara, no dia 16 de dezembro de 1981. Casada com Eduardo Aníbal Alves, nascido em Florianópolis - SC, no dia 28/07/1977.Têm dois filhos:
 1.2.11.7.11.1.1 - Leonardo Pitz Alves - nasceu em 28/01/2014, em Florianópolis - SC.
 1.2.11.7.11.1.2 - Vicente Pitz Alves - nascido em 02/07/2016, em Florianópolis - SC.
@@ -488,7 +378,7 @@
 1.2.11.9.1.4.1 - Jefferson Pitz Vieira - nascido em Florianópolis, no dia 02 de junho de 1997.
 1.2.11.9.1.5 - Gisele Pitz - nascida em Joinvile, no dia 02 de julho de 1978. Casada com Jean Carlos Pereira, nascido em Florianópolis - SC, em 17 de fevereiro de 1978. Ele é filho de Francisco de Assis Pereira, nascido em São Pedro de Alcântara, em 18 de setembro de 1952; e de Maria Izolete Pereira, nascida em Santa Tereza - São Pedro de Alcântara, em 01 de setembro de 1956. Jean Carlos e Gisele têm uma filha:
 1.2.11.9.1.5.1 - Giovana Pitz Pereira - nascida em 22 de dezembro de 2008, em Florianópolis - SC.
-1.2.11.9.2 - Antônio Pitz - nascido em S. Pedro de Alcântara, no dia 15 de abril de 1940. Casado com Marli Althoff, nascida em Alfredo Wagner - SC, no dia 09 de abril de 1947. Têm os seguintes filhos:
+1.2.11.9.2 - Antônio Pitz, nascido em S. Pedro de Alcântara, no dia 15 de abril de 1940. Casado com Marli Althoff, nascida em Alfredo Wagner - SC, no dia 09 de abril de 1947. Têm os seguintes filhos:
 1.2.11.9.2.1 - Antônio Pitz Júnior - nascido em Florianópolis, no dia 13 de dezembro de 1979.
 1.2.11.9.2.2 - Juliana Pitz - nascida em Florianópolis, no dia 02 de abril de 1986.
 1.2.11.9.3 - Maria Júlia Pitz - nascida em Taquaras, Rancho Queimado - SC, no dia 03 de junho de 1942.Casada com Raulino Alves, nascido em Pinheiral - Rancho Queimado, no dia 16 de setembro de 1935, falecido no dia 02 de janeiro de 2000, em Angelina, SC. Tiveram os seguintes filhos:

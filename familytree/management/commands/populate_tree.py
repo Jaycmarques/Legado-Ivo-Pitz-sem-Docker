@@ -15,23 +15,30 @@ class Command(BaseCommand):
             with open(file_path) as file:
                 lines = file.readlines()
                 for line in lines:
-                    parts = line.strip().split(" - ")
-                    id = parts[0]
-                    name = parts[1]
-                    info = parts[2]
+                    if line.strip():  # Ignore empty lines
+                        parts = line.strip().split(" - ")
+                        
+                        # Ensure there are at least 2 parts (ID and name)
+                        if len(parts) >= 2:
+                            id = parts[0]
+                            name = parts[1]
+                            info = parts[2][0].capitalize()+parts[2][1:] if len(parts) > 2 else ''  # Use empty string if no extra info
+                        else:
+                            self.stderr.write(self.style.ERROR(f"Invalid line format: {line.strip()}"))
+                            continue
 
-                    try:
-                        # Try to find the FamilyMember by id
-                        member = FamilyMember.objects.get(id=id)
-                        # If found, update the relevant fields
-                        member.name = name
-                        member.info = info
-                        member.save()
-                    except FamilyMember.DoesNotExist:
-                        # If not found, create a new FamilyMember
-                        member = FamilyMember.objects.create(id=id, name=name, info=info)
+                        try:
+                            # Try to find the FamilyMember by id
+                            member = FamilyMember.objects.get(id=id)
+                            # If found, update the relevant fields
+                            member.name = name.upper()
+                            member.info = info
+                            member.save()
+                        except FamilyMember.DoesNotExist:
+                            # If not found, create a new FamilyMember
+                            member = FamilyMember.objects.create(id=id, name=name.upper(), info=info)
 
-                    family.append(member)
+                        family.append(member)
 
         except FileNotFoundError:
             self.stderr.write(self.style.ERROR(f"File not found: {file_path}"))

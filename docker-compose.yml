@@ -21,7 +21,7 @@ services:
     env_file:
       - ./dotenv_files/.env # Importa variáveis de configuração do Postgres.
     ports:
-      - "5432:5432" # Exponha a porta padrão do Postgres (opcional).
+      - "5433:5432" # Exponha a porta padrão do Postgres (opcional).
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U $POSTGRES_USER" ]
       interval: 10s

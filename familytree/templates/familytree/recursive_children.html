@@ -3,7 +3,7 @@
     <h2 class="accordion-header" id="heading{{ child.id }}">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapse{{ child.id }}" aria-expanded="false" aria-controls="collapse{{ child.id }}">
-            {{ child.name }} (ID: {{ child.id }})
+            <b>{{ child.name }}</b> (ID: {{ child.id }})
         </button>
     </h2>
     <div id="collapse{{ child.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ child.id }}">
