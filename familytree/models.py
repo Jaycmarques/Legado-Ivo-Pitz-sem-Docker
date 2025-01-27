@@ -10,8 +10,8 @@ class FamilyMember(models.Model):
     - O atributo `divorced_parent` é utilizado para tratar situações em que
       um membro tem um filho de um casamento/relacionamento anterior.
     """
-    id = models.CharField(max_length=1000, primary_key=True)
-    name = models.CharField(max_length=1000, db_index=True)
+    id = models.CharField(max_length=255, primary_key=True)
+    name = models.CharField(max_length=400, db_index=True)
     info = models.TextField(max_length=5000, blank=True, null=True, db_index=True) 
 
     def __str__(self):

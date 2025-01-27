@@ -3,7 +3,7 @@ from familytree.models import FamilyMember, Relationship
 
 
 class Command(BaseCommand):
-    help = 'Populate family tree from familyData.txt'
+    help = 'Populate family tree from TreeFromWebsite.txt'
 
     def add_arguments(self, parser):
         parser.add_argument('file_path', type=str, help='Path to the family data file')
@@ -38,7 +38,6 @@ class Command(BaseCommand):
                             # If not found, create a new FamilyMember
                             member = FamilyMember.objects.create(id=id, name=name.upper(), info=info)
 
-                        family.append(member)
                         family.append(member)
 
         except FileNotFoundError:

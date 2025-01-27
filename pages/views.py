@@ -1,26 +1,32 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import TemplateDoesNotExist
+from django.contrib import messages  # Para exibir mensagens de sucesso
 from pages.forms import DedicatoriaForm
 from pages.models import Dedicatoria
 from pages.models import Page
 from django.core.paginator import Paginator
 
-# Create your views here.
-
-
+# View da página inicial
 def home_view(request, *args, **kwargs):
     pages = Page.objects.all()
     return render(request, "pages/home.html", {'pages': pages})
 
-def dedicatorias_view(request):
+# View para o formulário de criação de dedicatória
+def criar_dedicatoria(request):
     if request.method == "POST":
         form = DedicatoriaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('pages:dedicatorias')  # Redireciona para a mesma página após enviar
+            # Exibe uma mensagem de sucesso
+            messages.success(request, "Sua dedicatória foi enviada com sucesso!")
+            return redirect('pages:criar-dedicatoria')  # Redireciona para a página do formulário
     else:
         form = DedicatoriaForm()
 
+    return render(request, 'pages/criar_dedicatoria.html', {'form': form})
+
+# View para listar dedicatórias
+def dedicatorias_view(request):
     # Filtrar apenas as dedicatórias publicadas
     dedicatorias = Dedicatoria.objects.filter(is_published=True).order_by('-created_at')
 
@@ -31,13 +37,13 @@ def dedicatorias_view(request):
 
     return render(
         request,
-        'dedicatorias.html',
+        'pages/dedicatorias.html',
         {
-            'form': form,
             'page_obj': page_obj,  # Objeto da página atual para o template
         }
     )
 
+# View para detalhes de uma página específica
 def detalhe(request, slug):
     page = get_object_or_404(Page, slug=slug)
 
@@ -45,11 +51,9 @@ def detalhe(request, slug):
     try:
         template_name = f'pages/{slug}.html'
         # Verifica se o template existe
-        render(request, template_name, {'page': page})
+        return render(request, template_name, {'page': page})
     except TemplateDoesNotExist:
         # Se o template específico não existir, use um genérico
         template_name = 'pages/pages_detalhe.html'
 
     return render(request, template_name, {'page': page})
-
-

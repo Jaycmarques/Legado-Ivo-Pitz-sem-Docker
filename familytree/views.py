@@ -24,19 +24,6 @@ def detail(request):
             Prefetch('children', queryset=Relationship.objects.select_related('child'))
         ).get(id=member_id)
 
-        children = member.children.all()
-        return render(request, 'familytree/familymember.html', {'member': member, 'children': children})
-    except FamilyMember.DoesNotExist:
-        return render(request, 'familytree/familymember.html', {'error': 'Membro não encontrado.'})
-
-
-def detail(request):
-    member_id = request.GET.get('id')
-    try:
-        member = FamilyMember.objects.prefetch_related(
-            Prefetch('children', queryset=Relationship.objects.select_related('child'))
-        ).get(id=member_id)
-
         children = member.children.all()  # Aqui você já pré-carregou os filhos
         return render(request, 'familytree/familymember.html', {'member': member, 'children': children})
     except FamilyMember.DoesNotExist:
