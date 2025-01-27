@@ -20,3 +20,13 @@ class Page(OrderedModel):
         if self.redirect_url:
             return self.redirect_url
         return reverse('pages:detalhe', kwargs={'slug': self.slug})
+
+    
+class Dedicatoria(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Nome")
+    message = models.TextField(verbose_name="Mensagem")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Data de Envio")
+    is_published = models.BooleanField(default=False, verbose_name="Publicado?")
+
+    def __str__(self):
+        return f"Dedicatória de {self.name}"

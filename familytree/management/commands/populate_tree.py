@@ -39,6 +39,7 @@ class Command(BaseCommand):
                             member = FamilyMember.objects.create(id=id, name=name.upper(), info=info)
 
                         family.append(member)
+                        family.append(member)
 
         except FileNotFoundError:
             self.stderr.write(self.style.ERROR(f"File not found: {file_path}"))

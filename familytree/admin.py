@@ -12,3 +12,5 @@ class FamilyMemberAdmin(admin.ModelAdmin):
 
 
 admin.site.register(FamilyMember, FamilyMemberAdmin)
+
+

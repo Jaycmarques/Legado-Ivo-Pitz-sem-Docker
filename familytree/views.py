@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import FamilyMember, Relationship
 from django.db.models import Q, Prefetch, Func, Value
 from django.views.decorators.cache import cache_page
-from django.http import JsonResponse
 from django.db.models.functions import Lower
+
 
 class Unaccent(Func):
     function = 'unaccent'
@@ -30,7 +30,6 @@ def detail(request):
         return render(request, 'familytree/familymember.html', {'error': 'Membro não encontrado.'})
 
 
-
 def detail(request):
     member_id = request.GET.get('id')
     try:
@@ -42,8 +41,6 @@ def detail(request):
         return render(request, 'familytree/familymember.html', {'member': member, 'children': children})
     except FamilyMember.DoesNotExist:
         return render(request, 'familytree/familymember.html', {'error': 'Membro não encontrado.'})
-
-
 
 
 def search_family_member(request):
@@ -69,5 +66,4 @@ def search_family_member(request):
             'search_value': search_value,
         }
     )
-
 

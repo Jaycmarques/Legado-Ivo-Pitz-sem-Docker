@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Page
+from .models import Dedicatoria, Page
 from ordered_model.admin import OrderedModelAdmin
 
 
@@ -7,3 +7,10 @@ from ordered_model.admin import OrderedModelAdmin
 class PageAdmin(OrderedModelAdmin):
     list_display = ('titulo', 'redirect_url', 'move_up_down_links')
     prepopulated_fields = {'slug': ('titulo',)}
+
+@admin.register(Dedicatoria)
+class DedicatoriaAdmin(admin.ModelAdmin):
+    list_display = ('name', 'message', 'is_published', 'created_at')
+    list_filter = ('is_published', 'created_at')
+    search_fields = ('name', 'message')
+    list_editable = ('is_published',)

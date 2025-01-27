@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.template import TemplateDoesNotExist
+from pages.forms import DedicatoriaForm
+from pages.models import Dedicatoria
 from pages.models import Page
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -9,6 +12,31 @@ def home_view(request, *args, **kwargs):
     pages = Page.objects.all()
     return render(request, "pages/home.html", {'pages': pages})
 
+def dedicatorias_view(request):
+    if request.method == "POST":
+        form = DedicatoriaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pages:dedicatorias')  # Redireciona para a mesma página após enviar
+    else:
+        form = DedicatoriaForm()
+
+    # Filtrar apenas as dedicatórias publicadas
+    dedicatorias = Dedicatoria.objects.filter(is_published=True).order_by('-created_at')
+
+    # Configuração da paginação - 4 itens por página
+    paginator = Paginator(dedicatorias, 4)
+    page_number = request.GET.get('page')  # Obtém o número da página da URL
+    page_obj = paginator.get_page(page_number)
+
+    return render(
+        request,
+        'dedicatorias.html',
+        {
+            'form': form,
+            'page_obj': page_obj,  # Objeto da página atual para o template
+        }
+    )
 
 def detalhe(request, slug):
     page = get_object_or_404(Page, slug=slug)
@@ -23,3 +51,5 @@ def detalhe(request, slug):
         template_name = 'pages/pages_detalhe.html'
 
     return render(request, template_name, {'page': page})
+
+
