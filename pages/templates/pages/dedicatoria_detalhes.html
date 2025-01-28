@@ -3,9 +3,10 @@
 {% block title %}Detalhes da Dedicatória{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="col-md-8 mx-auto">
-        <div class="card">
+<div class="container">
+    <div class="col-md-8 mx-auto" style="margin-top: 100px;">
+        <!-- Card com borda colorida aleatória -->
+        <div class="card hover-effect" style="border: 2px solid {{ dedicatoria.random_color }};">
             <div class="card-body">
                 <h5 class="card-title"><strong>{{ dedicatoria.name }}</strong></h5>
                 <p class="card-text">{{ dedicatoria.message }}</p>

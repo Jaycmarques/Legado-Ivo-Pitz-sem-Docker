@@ -49,9 +49,9 @@
 
     <!-- Lista de dedicatórias como cards -->
     <div class="row">
-        {% for dedicatoria in page_obj.object_list %}
+        {% for dedicatoria in page_obj %}
         <div class="col-md-4 mb-4">
-            <div class="card hover-effect h-100">
+            <div class="card hover-effect h-100" style="border: 2px solid {{ dedicatoria.random_color }};">
                 <div class="card-body">
                     <p class="card-text">{{ dedicatoria.message|truncatechars:100 }}</p>
                     <h5 class="card-title"><strong>{{ dedicatoria.name }}</strong></h5>
@@ -111,6 +111,7 @@
         </ul>
     </nav>
 </div>
+
 <style>
     .custom-button {
         background-color: #f5f5f5;
