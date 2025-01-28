@@ -1,24 +1,28 @@
 <header class="page-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white py-3">
+        <!-- Botão de toggle à esquerda -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Ícone centralizado na navbar -->
+        <div class="navbar-icon">
+            <i class="fas fa-tree"></i>
+        </div>
+
+        <!-- Links de navegação -->
         <div class="collapse navbar-collapse ms-3" id="navbarNav">
             <ul class="navbar-nav">
                 <!-- Links fixos -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">Ivo Pitz</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'familytree:familytree_index' %}">
-                        Árvore Genealógica
-                    </a>
+                    <a class="nav-link" href="{% url 'familytree:familytree_index' %}">Árvore Genealógica</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pages:dedicatorias' %}">
-                        Dedicatórias
-                    </a>
+                    <a class="nav-link" href="{% url 'pages:dedicatorias' %}">Dedicatórias</a>
                 </li>
                 <!-- Links dinâmicos -->
                 {% for page in PAGES %}

@@ -15,7 +15,23 @@
                 <small>Enviado em {{ dedicatoria.created_at|date:"d/m/Y H:i" }}</small>
             </div>
         </div>
-        <a href="{% url 'pages:dedicatorias' %}" class="btn btn-secondary mt-4">Voltar</a>
+        <div>
+            <a href="{% url 'pages:dedicatorias' %}" class="btn btn-secondary mt-4 mb-4">Voltar</a>
+        </div>
+
+        <!-- Navegação para o próximo e anterior com ícones de setas -->
+        <div class="d-flex justify-content-between mt-10">
+            {% if prev_dedicatoria %}
+            <a href="{% url 'pages:dedicatoria-detalhes' prev_dedicatoria.id %}" class="btn btn-pagination">
+                <i class="fas fa-chevron-left"></i> <!-- Ícone de seta para a esquerda -->
+            </a>
+            {% endif %}
+            {% if next_dedicatoria %}
+            <a href="{% url 'pages:dedicatoria-detalhes' next_dedicatoria.id %}" class="btn btn-pagination">
+                <i class="fas fa-chevron-right"></i> <!-- Ícone de seta para a direita -->
+            </a>
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,219 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding-bottom: 80px;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+footer .container {
+    padding: 20px 0;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Garante que todos os cards tenham a mesma altura */
+.card {
+    min-height: 150px;
+    /* Ajuste o valor conforme necessário */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    /* Garante consistência na área de conteúdo */
+}
+
+.link-hover {
+    color: #343a40;
+    /* Cor padrão (preto) */
+    transition: color 0.2s ease;
+}
+
+.link-hover:hover {
+    color: #495057;
+    /* Tom mais claro ao passar o mouse */
+}
+
+.custom-button {
+    background-color: #f5f5f5;
+    color: #363636;
+    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.custom-button:hover {
+    background-color: #d3d3d3;
+    color: #000000;
+}
+
+/* Estilo dos botões de navegação */
+.btn-pagination {
+    background-color: transparent;
+    /* Fundo transparente */
+    color: #2e2d2d;
+    /* Cor do texto (cor da seta) */
+    border: 2px solid #2e2d2d;
+    /* Borda escura */
+    padding: 10px;
+    font-size: 24px;
+    /* Aumenta o tamanho da seta */
+    transition: all 0.3s ease;
+    /* Animação suave */
+}
+
+.btn-pagination:hover {
+    background-color: #181717;
+    /* Fundo escuro ao passar o mouse */
+    color: #fff;
+    /* Cor da seta ao passar o mouse */
+}
+
+/* Fixando os botões de navegação à esquerda e à direita do card */
+.d-flex {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* Centraliza os botões horizontalmente */
+    margin-top: 20px;
+}
+
+/* Posiciona os botões mais para baixo e mais próximos */
+.d-flex .btn-pagination {
+    position: absolute;
+    top: 80%;
+    /* Move os botões mais para baixo */
+    transform: translateY(-50%);
+    /* Centraliza verticalmente */
+    z-index: 10;
+}
+
+/* Posiciona o botão "Anterior" à esquerda */
+.d-flex .btn-pagination:first-child {
+    left: 20%;
+    /* Afastado um pouco da borda esquerda */
+}
+
+/* Posiciona o botão "Próximo" à direita */
+.d-flex .btn-pagination:last-child {
+    right: 20%;
+    /* Afastado um pouco da borda direita */
+}
+
+/* Ajuste do tamanho das setas */
+.d-flex .btn-pagination i {
+    font-size: 30px;
+    /* Aumenta o tamanho das setas */
+}
+
+/* Ajustando o estilo do botão Voltar para garantir que ele tenha o mesmo tamanho do card */
+.w-100 {
+    width: 100%;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 767px) {
+    .d-flex .btn-pagination {
+        top: 85%;
+        /* Move mais para baixo em telas menores */
+    }
+
+    .d-flex .btn-pagination:first-child {
+        left: 0%;
+        /* Mais próximo da borda esquerda */
+    }
+
+    .d-flex .btn-pagination:last-child {
+        right: 0%;
+        /* Mais próximo da borda direita */
+    }
+
+    /* Aumentando a margem superior do botão Voltar para evitar sobreposição */
+    .btn-pagination.voltar {
+        margin-top: 70px;
+        /* Aumente esse valor conforme necessário */
+    }
+}
+
+/* Estilo para o botão Voltar (garantir que ele não se sobreponha aos botões) */
+.btn-secondary {
+    margin-top: 50px;
+    /* Aumente se necessário para garantir distância do card */
+    width: auto;
+    /* Garante que o botão tenha largura suficiente sem ficar esticado */
+    padding: 10px 20px;
+    /* Altera o tamanho do botão para ajustar */
+    display: inline-block;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    /* Ajuste o valor conforme necessário */
+}
+
+/* Navbar customizada */
+.navbar {
+    position: relative;
+    /* Necessário para o posicionamento do ícone */
+}
+
+/* Botão de toggle à esquerda */
+.navbar-toggler {
+    margin-left: 10px;
+    z-index: 2;
+    /* Para garantir que o botão esteja acima dos outros elementos */
+}
+
+/* Ícone centralizado na navbar */
+.navbar-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* Centraliza o ícone */
+    z-index: 3;
+    /* Garante que o ícone fique acima dos links */
+}
+
+/* Estilo do ícone */
+.navbar-icon i {
+    font-size: 24px;
+    color: white;
+    /* Cor do ícone */
+}
+
+/* Responsividade - Para dispositivos móveis */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        margin-left: 10px;
+        /* Mantém o botão à esquerda */
+    }
+
+    .navbar-icon {
+        position: fixed;
+        left: 50%;
+        top: 30px;
+        transform: translateX(-50%) translateY(-50%);
+        /* Mantém o ícone centralizado */
+        z-index: 3;
+    }
+}

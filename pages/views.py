@@ -31,7 +31,7 @@ def get_random_color():
 
 def dedicatorias_view(request):
     # Filtrar apenas as dedicatórias publicadas
-    dedicatorias = Dedicatoria.objects.filter(is_published=True).order_by('-created_at')
+    dedicatorias = Dedicatoria.objects.filter(is_published=True).order_by('created_at')
 
     # Gerar cor aleatória para cada dedicatória
     for dedicatoria in dedicatorias:
@@ -55,8 +55,18 @@ def dedicatoria_detalhes(request, id):
     
     # Gerar uma cor aleatória para o card de detalhes
     dedicatoria.random_color = get_random_color()
+    
+    # Encontrar a dedicatória anterior
+    prev_dedicatoria = Dedicatoria.objects.filter(id__lt=dedicatoria.id).order_by('-id').first()
+    
+    # Encontrar a próxima dedicatória
+    next_dedicatoria = Dedicatoria.objects.filter(id__gt=dedicatoria.id).order_by('id').first()
 
-    return render(request, 'pages/dedicatoria_detalhes.html', {'dedicatoria': dedicatoria})
+    return render(request, 'pages/dedicatoria_detalhes.html', {
+        'dedicatoria': dedicatoria,
+        'prev_dedicatoria': prev_dedicatoria,
+        'next_dedicatoria': next_dedicatoria,
+    })
   
 
 # View para detalhes de uma página específica
