@@ -1,0 +1,32 @@
+<header class="page-header">
+    <nav class="navbar is-light">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">
+                Ivo Pitz
+            </a>
+            <a class="navbar-item" href="{% url 'familytree:familytree_index' %}">
+                Árvore Genealógica
+            </a>
+            <a class="navbar-item" href="{% url 'pages:dedicatorias' %}">
+                Dedicatórias
+            </a>
+
+            <!-- Botão Toggle para telas pequenas -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <!-- Menu colapsável, visível apenas em dispositivos móveis -->
+        <div id="navbarBasicExample" class="navbar-menu is-hidden-desktop">
+            <div class="navbar-start">
+                {% for page in PAGES %}
+                <a class="navbar-item" href="{{ page.get_absolute_url }}">{{ page.titulo }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+</header>

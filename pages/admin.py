@@ -10,7 +10,7 @@ class PageAdmin(OrderedModelAdmin):
 
 @admin.register(Dedicatoria)
 class DedicatoriaAdmin(admin.ModelAdmin):
-    list_display = ('name', 'message', 'is_published', 'created_at')
+    list_display = ('id', 'name', 'message', 'is_published', 'created_at')
     list_filter = ('is_published', 'created_at')
     search_fields = ('name', 'message')
     list_editable = ('is_published',)

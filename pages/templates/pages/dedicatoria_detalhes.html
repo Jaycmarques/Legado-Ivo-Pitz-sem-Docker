@@ -1,0 +1,20 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Detalhes da Dedicatória{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{ dedicatoria.name }}</strong></h5>
+                <p class="card-text">{{ dedicatoria.message }}</p>
+            </div>
+            <div class="card-footer text-muted">
+                <small>Enviado em {{ dedicatoria.created_at|date:"d/m/Y H:i" }}</small>
+            </div>
+        </div>
+        <a href="{% url 'pages:dedicatorias' %}" class="btn btn-secondary mt-4">Voltar</a>
+    </div>
+</div>
+{% endblock %}

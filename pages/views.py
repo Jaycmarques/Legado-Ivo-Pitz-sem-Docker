@@ -31,7 +31,7 @@ def dedicatorias_view(request):
     dedicatorias = Dedicatoria.objects.filter(is_published=True).order_by('-created_at')
 
     # Configuração da paginação - 4 itens por página
-    paginator = Paginator(dedicatorias, 4)
+    paginator = Paginator(dedicatorias, 12)
     page_number = request.GET.get('page')  # Obtém o número da página da URL
     page_obj = paginator.get_page(page_number)
 
@@ -42,6 +42,10 @@ def dedicatorias_view(request):
             'page_obj': page_obj,  # Objeto da página atual para o template
         }
     )
+
+def dedicatoria_detalhes(request, id):
+        dedicatoria = get_object_or_404(Dedicatoria, id=id)
+        return render(request, 'pages/dedicatoria_detalhes.html', {'dedicatoria': dedicatoria})   
 
 # View para detalhes de uma página específica
 def detalhe(request, slug):

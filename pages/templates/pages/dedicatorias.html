@@ -3,25 +3,70 @@
 {% block title %}Dedicatórias Publicadas{% endblock %}
 
 {% block content %}
+<style>
+    .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Garante que todos os cards tenham a mesma altura */
+    .card {
+        min-height: 150px;
+        /* Ajuste o valor conforme necessário */
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
+        /* Garante consistência na área de conteúdo */
+    }
+
+    .link-hover {
+        color: #343a40;
+        /* Cor padrão (preto) */
+        transition: color 0.2s ease;
+    }
+
+    .link-hover:hover {
+        color: #495057;
+        /* Tom mais claro ao passar o mouse */
+    }
+</style>
+
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="mb-0">Dedicatórias Publicadas</h3>
+        <h3 class="mb-0"><strong>Dedicatórias Publicadas</strong></h3>
         <!-- Botão para ir à página de criar dedicatória -->
-        <a href="{% url 'pages:criar-dedicatoria' %}" class="btn btn-primary">
-            Criar Nova Dedicatória
+        <a href="{% url 'pages:dedicatoria-criar' %}" class="custom-button">
+            <span class="icon is-small">
+                <i class="fas fa-plus-circle"></i> <!-- Ícone de adicionar -->
+            </span>
+            <span>Criar Nova Dedicatória</span>
         </a>
     </div>
 
-    <!-- Lista de dedicatórias -->
-    <div class="list-group">
+    <!-- Lista de dedicatórias como cards -->
+    <div class="row">
         {% for dedicatoria in page_obj.object_list %}
-        <div class="list-group-item">
-            <p>{{ dedicatoria.message }}</p>
-            <h5><strong>{{ dedicatoria.name }}</strong></h5>
-            <small class="text-muted">Enviado em {{ dedicatoria.created_at|date:"d/m/Y H:i" }}</small>
+        <div class="col-md-4 mb-4">
+            <div class="card hover-effect h-100">
+                <div class="card-body">
+                    <p class="card-text">{{ dedicatoria.message|truncatechars:100 }}</p>
+                    <h5 class="card-title"><strong>{{ dedicatoria.name }}</strong></h5>
+                </div>
+                <div class="card-footer text-muted">
+                    <small>Enviado em {{ dedicatoria.created_at|date:"d/m/Y H:i" }}</small>
+                    <a href="{% url 'pages:dedicatoria-detalhes' dedicatoria.id %}"
+                        class="stretched-link link-hover"></a>
+                </div>
+            </div>
         </div>
         {% empty %}
-        <div class="list-group-item text-center">Nenhuma dedicatória publicada ainda. Seja o primeiro!</div>
+        <div class="col-12 text-center">
+            <p>Nenhuma dedicatória publicada ainda. Seja o primeiro!</p>
+        </div>
         {% endfor %}
     </div>
 
@@ -66,4 +111,21 @@
         </ul>
     </nav>
 </div>
+<style>
+    .custom-button {
+        background-color: #f5f5f5;
+        color: #363636;
+        transition: background-color 0.3s ease;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .custom-button:hover {
+        background-color: #d3d3d3;
+        color: #000000;
+    }
+</style>
 {% endblock %}
