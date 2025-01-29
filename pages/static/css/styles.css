@@ -170,59 +170,6 @@ footer .container {
     display: inline-block;
 }
 
-.nav-link {
-    font-size: 1.2rem;
-    /* Ajuste o valor conforme necessário */
-}
-
-/* Navbar customizada */
-.navbar {
-    position: relative;
-    /* Necessário para o posicionamento do ícone */
-}
-
-/* Botão de toggle à esquerda */
-.navbar-toggler {
-    margin-left: 10px;
-    z-index: 2;
-    /* Para garantir que o botão esteja acima dos outros elementos */
-}
-
-/* Ícone centralizado na navbar */
-.navbar-icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    /* Centraliza o ícone */
-    z-index: 3;
-    /* Garante que o ícone fique acima dos links */
-}
-
-/* Estilo do ícone */
-.navbar-icon i {
-    font-size: 24px;
-    color: white;
-    /* Cor do ícone */
-}
-
-/* Responsividade - Para dispositivos móveis */
-@media (max-width: 991px) {
-    .navbar-toggler {
-        margin-left: 10px;
-        /* Mantém o botão à esquerda */
-    }
-
-    .navbar-icon {
-        position: fixed;
-        left: 50%;
-        top: 30px;
-        transform: translateX(-50%) translateY(-50%);
-        /* Mantém o ícone centralizado */
-        z-index: 3;
-    }
-}
-
 .accordion-button {
     background-color: rgba(255, 223, 0, 0.) !important;
     /* Amarelo transparente */
@@ -239,4 +186,47 @@ footer .container {
 .accordion-button:focus {
     box-shadow: none;
     /* Remove o contorno azul ao clicar */
+}
+
+/* HEADER RESPONSIVO */
+.navbar {
+    position: relative;
+    width: 100%;
+}
+
+.navbar-toggler {
+    margin-left: 10px;
+    z-index: 2;
+}
+
+.navbar-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
+}
+
+.navbar-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    /* Ajuste o valor conforme necessário */
+}
+
+/* Responsividade - Para dispositivos móveis */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        margin-left: 10px;
+        /* Mantém o botão à esquerda */
+    }
+
+    .navbar-icon {
+        left: 50%;
+        top: 30px;
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
