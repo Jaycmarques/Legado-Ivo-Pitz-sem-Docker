@@ -73,11 +73,7 @@ ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [
-        os.path.join(BASE_DIR, 'templates'),
-        os.path.join(BASE_DIR, 'familytree', 'templates', 'familytree'),
-        os.path.join(BASE_DIR, 'pages', 'templates', 'pages'),
-    ],
+    'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Apenas um diretório global
     'APP_DIRS': True,
     'OPTIONS': {
         'context_processors': [
@@ -86,7 +82,9 @@ TEMPLATES = [{
             'django.template.context_processors.request',
             'django.contrib.auth.context_processors.auth',
             'django.contrib.messages.context_processors.messages',
-        ], }, },]
+        ],
+    },
+}]
 
 
 WSGI_APPLICATION = 'mysite.wsgi.application'

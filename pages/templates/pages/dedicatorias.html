@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="mb-0"><strong>Dedicatórias Publicadas</strong></h3>
         <!-- Botão para ir à página de criar dedicatória -->
-        <a href="{% url 'pages:dedicatoria-criar' %}" class="custom-button">
+        <a href="{% url 'pages:dedicatoria-criar' %}" class="button is-warning">
             <span class="icon is-small">
                 <i class="fas fa-plus-circle"></i> <!-- Ícone de adicionar -->
             </span>
@@ -39,46 +39,35 @@
         {% endfor %}
     </div>
 
-    <!-- Navegação da paginação -->
-    <nav aria-label="Page navigation" class="mt-4">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li class="page-item">
-                <a class="page-link" href="?page=1">Primeira</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-                <a class="page-link">Primeira</a>
-            </li>
-            <li class="page-item disabled">
-                <a class="page-link">Anterior</a>
-            </li>
-            {% endif %}
+    <nav class="pagination is-centered mt-4" role="navigation" aria-label="pagination">
+        {% if page_obj.has_previous %}
+        <a class="pagination-previous has-background-warning has-text-black" href="?page=1">Primeira</a>
+        <a class="pagination-previous has-background-warning has-text-black"
+            href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% else %}
+        <a class="pagination-previous has-background-warning-light has-text-black" disabled>Primeira</a>
+        <a class="pagination-previous has-background-warning-light has-text-black" disabled>Anterior</a>
+        {% endif %}
 
-            <li class="page-item disabled">
-                <span class="page-link">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+        <ul class="pagination-list">
+            <li>
+                <span class="pagination-link has-background-warning has-text-black" disabled>
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+                </span>
             </li>
-
-            {% if page_obj.has_next %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Próxima</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Última</a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-                <a class="page-link">Próxima</a>
-            </li>
-            <li class="page-item disabled">
-                <a class="page-link">Última</a>
-            </li>
-            {% endif %}
         </ul>
+
+        {% if page_obj.has_next %}
+        <a class="pagination-next has-background-warning has-text-black"
+            href="?page={{ page_obj.next_page_number }}">Próxima</a>
+        <a class="pagination-next has-background-warning has-text-black"
+            href="?page={{ page_obj.paginator.num_pages }}">Última</a>
+        {% else %}
+        <a class="pagination-next has-background-warning-light has-text-black" disabled>Próxima</a>
+        <a class="pagination-next has-background-warning-light has-text-black" disabled>Última</a>
+        {% endif %}
     </nav>
+
 </div>
 
 {% endblock %}

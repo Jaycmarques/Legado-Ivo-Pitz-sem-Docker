@@ -11,6 +11,11 @@ body {
     padding-bottom: 80px;
 }
 
+.page-header {
+    border-bottom: 3px solid red;
+    width: 100%;
+}
+
 footer {
     margin-top: auto;
     width: 100%;
@@ -216,4 +221,22 @@ footer .container {
         /* Mantém o ícone centralizado */
         z-index: 3;
     }
+}
+
+.accordion-button {
+    background-color: rgba(255, 223, 0, 0.) !important;
+    /* Amarelo transparente */
+    color: black !important;
+    /* Cor do texto */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(255, 223, 0, 0.3) !important;
+    /* Um pouco mais opaco quando expandido */
+    color: black !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    /* Remove o contorno azul ao clicar */
 }
