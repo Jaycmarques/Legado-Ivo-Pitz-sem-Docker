@@ -230,3 +230,59 @@ footer .container {
         transform: translateX(-50%) translateY(-50%);
     }
 }
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 767px) {
+
+    /* Alinha os botões de navegação para dispositivos móveis */
+    .d-flex .btn-pagination {
+        top: 85%;
+        /* Move mais para baixo em telas menores */
+    }
+
+    .d-flex .btn-pagination:first-child {
+        left: 0%;
+        /* Mais próximo da borda esquerda */
+    }
+
+    .d-flex .btn-pagination:last-child {
+        right: 0%;
+        /* Mais próximo da borda direita */
+    }
+
+    /* Aumentando a margem superior do botão Voltar para evitar sobreposição */
+    .btn-pagination.voltar {
+        margin-top: 70px;
+        /* Aumente esse valor conforme necessário */
+    }
+
+    /* Alinhamento dos cards em telas pequenas */
+    .row {
+        display: flex;
+        flex-direction: column;
+        /* Organiza os cards verticalmente */
+    }
+
+    .col-md-4 {
+        width: 100% !important;
+        /* Faz com que cada card ocupe toda a largura disponível */
+        margin-bottom: 20px;
+        /* Espaço entre os cards */
+    }
+
+    /* Responsividade para quando a tela for maior que 767px (telas médias e grandes) */
+    @media (min-width: 768px) {
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            /* Permite os cards quebrarem em várias linhas */
+        }
+
+        .col-md-4 {
+            width: calc(33.333% - 20px);
+            /* Exibe os cards em 3 colunas, com espaçamento */
+            margin-bottom: 20px;
+            /* Adiciona um espaçamento entre os cards */
+        }
+    }
+}
