@@ -4,27 +4,38 @@
 {% block title %}Página Inicial{% endblock %}
 {% block content %}
 <div class="container mt-4">
-    <!-- Conteúdo principal -->
-    <div class="row align-items-center">
-        <!-- Centralizar imagem, mover para baixo e para a esquerda -->
-        <div class="col-md-6 d-flex justify-content-center">
-            <img src="{% static 'img/ivopitz.jpg' %}" alt="Descrição da imagem" class="img-fluid mx-auto custom-image">
+    <!-- Banner com imagem 1920x800 -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <img src="{% static 'img/ivopitz2.jpg' %}" alt="Descrição da imagem" class="img-fluid w-100"
+                style="height: 400px; object-fit: cover;">
         </div>
-        <div class="col-md-6">
-            <!-- Botão grande com ícone de árvore genealógica -->
-            <div class="d-flex justify-content-start mb-5">
-                <a href="{% url 'familytree:familytree_index' %}" class="custom-length">
-                    <button class="button is-large custom-length button is-warning">
-                        <span class="icon is-medium">
-                            <i class="fas fa-sitemap"></i>
-                        </span>
-                        <span>Árvore Genealógica</span>
-                    </button>
-                </a>
-            </div>
+    </div>
 
-            <!-- Título "Sobre Ivo Pitz" -->
-            <h2><strong>Sobre Ivo Pitz</strong></h2>
+    <!-- Botão da árvore genealógica abaixo do banner, com o mesmo tamanho da imagem -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <a href="{% url 'familytree:familytree_index' %}">
+                <button class="button is-large button is-warning w-100" style="height: 60px;">
+                    <span class="icon is-medium">
+                        <i class="fas fa-sitemap"></i>
+                    </span>
+                    <span>Árvore Genealógica</span>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Título "Sobre Ivo Pitz" com mais respiro -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 style="font-size: 36px; font-weight: bold;">Sobre Ivo Pitz</h2>
+        </div>
+    </div>
+
+    <!-- Aumentando o espaço entre o título e o texto -->
+    <div class="row mt-5">
+        <div class="col-md-12">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada quam ut arcu fermentum, et
                 cursus sapien scelerisque. Integer ultrices, nisi vel facilisis rhoncus, libero massa accumsan massa, et
