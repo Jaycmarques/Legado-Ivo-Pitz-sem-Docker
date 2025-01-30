@@ -199,13 +199,6 @@ footer .container {
     z-index: 2;
 }
 
-.navbar-icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 3;
-}
 
 .navbar-icon i {
     font-size: 24px;

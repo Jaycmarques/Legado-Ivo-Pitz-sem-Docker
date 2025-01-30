@@ -199,18 +199,6 @@ footer .container {
     z-index: 2;
 }
 
-.navbar-icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 3;
-}
-
-.navbar-icon i {
-    font-size: 24px;
-    color: white;
-}
 
 .nav-link {
     font-size: 1.2rem;
@@ -224,11 +212,6 @@ footer .container {
         /* Mantém o botão à esquerda */
     }
 
-    .navbar-icon {
-        left: 50%;
-        top: 30px;
-        transform: translateX(-50%) translateY(-50%);
-    }
 }
 
 /* Responsividade para dispositivos móveis */
