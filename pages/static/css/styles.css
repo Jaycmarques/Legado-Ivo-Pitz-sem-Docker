@@ -201,7 +201,8 @@ footer .container {
 
 
 .nav-link {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    margin-left: 15px;
     /* Ajuste o valor conforme necessário */
 }
 
@@ -309,4 +310,49 @@ footer .container {
     /* Tamanho da fonte */
     padding: 15px;
     /* Aumenta o padding para deixar o botão mais "cheio" */
+}
+
+/* Centraliza os links dentro da navbar */
+.custom-navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    /* Garante que os links se empilhem em dispositivos menores */
+}
+
+/* Estilo para os itens de navegação */
+.custom-navbar .nav-item {
+    margin: 0 20px;
+    /* Espaçamento entre os itens */
+}
+
+/* Responsividade: os itens da navbar devem empilhar quando a tela for pequena */
+@media (max-width: 991px) {
+    .custom-navbar {
+        justify-content: space-around;
+        /* Distribui os itens quando a tela for pequena */
+    }
+
+    .custom-navbar .nav-item {
+        margin: 10px 0;
+        /* Menor margem para dispositivos pequenos */
+    }
+}
+
+/* Se a tela for ainda menor, o título "Família Pitz" pode ser ajustado */
+@media (max-width: 575px) {
+    .container h1 {
+        font-size: 1.5rem;
+        /* Reduz o tamanho da fonte em telas muito pequenas */
+    }
+}
+
+.logo-pitz {
+    max-width: 200px;
+    /* Ajuste conforme necessário */
+    height: auto;
+    /* Manter a proporção da imagem */
 }

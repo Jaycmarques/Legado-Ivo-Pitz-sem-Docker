@@ -1,3 +1,4 @@
+{% load static %}
 <header class="page-header" style=" border-bottom: 3px solid red;">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white py-3">
@@ -7,17 +8,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="container text-center my-3">
-            <h1 class="display-5">Família Pitz</h1>
-        </div>
+
+        <a href="{% url 'home' %}">
+            <img src="{% static 'img/logo-pitz-white.png' %}" class="logo-pitz me-10">
+        </a>
 
         <!-- Links de navegação -->
         <div class="collapse navbar-collapse" id="navbarNav">
+
             <ul class="navbar-nav mx-auto">
-                <!-- Links fixos -->
-                <li class="nav-item me-5">
-                    <a class="nav-link" href="{% url 'home' %}">Home</a>
-                </li>
                 <li class="nav-item me-5">
                     <a class="nav-link" href="{% url 'familytree:familytree_index' %}">Árvore Genealógica</a>
                 </li>
