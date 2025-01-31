@@ -44,6 +44,11 @@ footer .container {
     /* Garante consistência na área de conteúdo */
 }
 
+.card-title {
+    font-size: 20px;
+    /* Garante consistência na área de conteúdo */
+}
+
 .link-hover {
     color: #343a40;
     /* Cor padrão (preto) */

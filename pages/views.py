@@ -20,7 +20,7 @@ def criar_dedicatoria(request):
             form.save()
             # Exibe uma mensagem de sucesso
             messages.success(request, "Sua dedicatória foi enviada com sucesso!")
-            return redirect('pages:criar-dedicatoria')  # Redireciona para a página do formulário
+            return redirect('pages:dedicatorias') # Redireciona para a página do formulário
     else:
         form = DedicatoriaForm()
 
@@ -38,7 +38,7 @@ def dedicatorias_view(request):
         dedicatoria.random_color = get_random_color()
 
     # Configuração da paginação - 12 itens por página
-    paginator = Paginator(dedicatorias, 12)
+    paginator = Paginator(dedicatorias, 9)
     page_number = request.GET.get('page')  # Obtém o número da página da URL
     page_obj = paginator.get_page(page_number)
 

@@ -145,6 +145,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Diretórios adicionais para procurar arquivos estáticos
 STATICFILES_DIRS = [
     # Adicione o caminho correto para arquivos estáticos de aplicativos
+    os.path.join(BASE_DIR, 'familytree', 'static'),
     os.path.join(BASE_DIR, 'pages', 'static'),
 ]
 

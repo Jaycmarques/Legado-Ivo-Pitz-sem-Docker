@@ -4,22 +4,28 @@
 
 {% block content %}
 
-<div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="mb-0"><strong>Dedicatórias Publicadas</strong></h3>
-        <!-- Botão para ir à página de criar dedicatória -->
-        <a href="{% url 'pages:dedicatoria-criar' %}" class="button is-warning">
+<div class="container mt-5 px-3">
+    {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 flex-nowrap">
+        <h3 class="mb-3 mb-md-0" style="font-size: 30px;"><strong>Dedicatórias Publicadas</strong></h3>
+        <a href="{% url 'pages:dedicatoria-criar' %}" class="button is-warning text-center w-md-auto">
             <span class="icon is-small">
-                <i class="fas fa-plus-circle"></i> <!-- Ícone de adicionar -->
+                <i class="fas fa-plus-circle"></i>
             </span>
             <span>Criar Nova Dedicatória</span>
         </a>
     </div>
 
-    <!-- Lista de dedicatórias como cards -->
     <div class="row">
         {% for dedicatoria in page_obj %}
-        <div class="col-md-4 mb-4">
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
             <div class="card hover-effect h-100" style="border: 2px solid {{ dedicatoria.random_color }};">
                 <div class="card-body">
                     <p class="card-text">{{ dedicatoria.message|truncatechars:100 }}</p>
@@ -39,7 +45,7 @@
         {% endfor %}
     </div>
 
-    <nav class="pagination is-centered mt-4" role="navigation" aria-label="pagination">
+    <nav class="pagination is-centered mt-4 text-center" role="navigation" aria-label="pagination">
         {% if page_obj.has_previous %}
         <a class="pagination-previous has-background-warning has-text-black" href="?page=1">Primeira</a>
         <a class="pagination-previous has-background-warning has-text-black"
@@ -67,7 +73,7 @@
         <a class="pagination-next has-background-warning-light has-text-black" disabled>Última</a>
         {% endif %}
     </nav>
-
 </div>
+
 
 {% endblock %}
