@@ -41,12 +41,35 @@ footer .container {
     flex-direction: column;
     justify-content: space-between;
     min-height: 200px;
-    /* Garante consistência na área de conteúdo */
+    width: 100%;
+    /* Largura flexível */
+    min-width: 300px;
+    /* Largura mínima para evitar que o conteúdo fique muito pequeno */
+    max-width: 800px;
+    /* Largura máxima para evitar que o conteúdo se estique demais */
 }
+
+
+.card-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 
 .card-title {
     font-size: 20px;
     /* Garante consistência na área de conteúdo */
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        min-height: 150px;
+        width: auto;
+        max-width: 95%;
+        /* Limita a largura em 95% da tela */
+        margin: 0 auto;
+        /* Centraliza o card se necessário */
+    }
 }
 
 .link-hover {
