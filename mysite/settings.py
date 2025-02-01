@@ -180,14 +180,14 @@ INTERNAL_IPS = [
     "172.19.0.1",       # IP interno do Docker
 ]
 
-# HSTS (HTTP Strict Transport Security)
-SECURE_HSTS_SECONDS = 31536000  # 1 ano
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+# # HSTS (HTTP Strict Transport Security)
+# SECURE_HSTS_SECONDS = 31536000  # 1 ano
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
 
-# Forçar SSL (HTTPS)
-SECURE_SSL_REDIRECT = True
+# # Forçar SSL (HTTPS)
+# SECURE_SSL_REDIRECT = True
 
-# Cookies seguros
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# # Cookies seguros
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
