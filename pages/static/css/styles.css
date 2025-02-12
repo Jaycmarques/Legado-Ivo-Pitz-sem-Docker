@@ -383,4 +383,36 @@ footer .container {
     /* Ajuste conforme necessário */
     height: auto;
     /* Manter a proporção da imagem */
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    /* Número menor que o da navbar */
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        position: absolute;
+        top: 40%;
+        left: 60%;
+        /* Ajuste para evitar sobreposição */
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-pitz {
+        position: relative;
+        top: 40%;
+        left: 60%;
+        /* Ajuste para evitar sobreposição */
+    }
 }
