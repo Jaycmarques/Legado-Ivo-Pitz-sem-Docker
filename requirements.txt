@@ -27,3 +27,4 @@ pillow
 psycopg2
 django-axes>=7.0.0,<7.1
 django-debug-toolbar
+django-summernote==0.8.20.0

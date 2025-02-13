@@ -9,7 +9,8 @@
         <div class="card hover-effect" style="border: 2px solid {{ dedicatoria.random_color }};">
             <div class="card-body">
                 <h5 class="card-title"><strong>{{ dedicatoria.name }}</strong></h5>
-                <p class="card-text">{{ dedicatoria.message }}</p>
+                <!-- Exibindo a mensagem da dedicatória com filtro safe -->
+                <p class="card-text">{{ dedicatoria.message|safe }}</p>
             </div>
             <div class="card-footer text-muted">
                 <small>Enviado em {{ dedicatoria.created_at|date:"d/m/Y H:i" }}</small>

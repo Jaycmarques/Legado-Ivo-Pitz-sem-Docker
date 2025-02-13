@@ -26,6 +26,7 @@ urlpatterns = [
     path('safeadmin/', admin.site.urls),  # Admin do Django
     path('', include('familytree.urls')),
     path('pages/', include('pages.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:

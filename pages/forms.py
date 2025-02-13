@@ -1,4 +1,5 @@
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from pages.models import Dedicatoria
 
 class DedicatoriaForm(forms.ModelForm):
@@ -11,5 +12,5 @@ class DedicatoriaForm(forms.ModelForm):
         }
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu nome'}),
-            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Digite sua dedicatória'}),
+            'message': SummernoteWidget(attrs={'class': 'form-control', 'placeholder': 'Digite sua dedicatória'}),
         }
