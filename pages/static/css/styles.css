@@ -380,39 +380,27 @@ footer .container {
 
 .logo-pitz {
     max-width: 200px;
-    /* Ajuste conforme necessário */
     height: auto;
-    /* Manter a proporção da imagem */
-    position: absolute;
-    top: 50%;
+    /* Mantém a proporção da imagem */
+    position: fixed;
+    /* Fixada em relação à janela */
+    top: 4%;
+    /* Ajuste vertical */
     left: 20%;
+    /* Ajuste horizontal */
     transform: translate(-50%, -50%);
-    z-index: 100;
-}
-
-.logo-container {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    /* Número menor que o da navbar */
-}
-
-@media (max-width: 768px) {
-    .logo-container {
-        position: absolute;
-        top: 40%;
-        left: 60%;
-        /* Ajuste para evitar sobreposição */
-    }
+    /* Centraliza no ponto definido */
+    z-index: 1000;
+    /* Mantém a logo acima de outros elementos */
 }
 
 @media (max-width: 768px) {
     .logo-pitz {
-        position: relative;
-        top: 40%;
+        top: 4%;
+        /* Ajuste de posição no mobile */
         left: 60%;
-        /* Ajuste para evitar sobreposição */
+        /* Ajuste horizontal no mobile */
+        transform: translate(-50%, -40%);
+        /* Centraliza no ponto definido */
     }
 }

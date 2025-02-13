@@ -7,8 +7,12 @@
     <!-- Banner com imagem 1920x800 -->
     <div class="row mb-5">
         <div class="col-12">
-            <img src="{% static 'img/ivo-pitz.jpg' %}" alt="Descrição da imagem" class="img-fluid w-100"
-                style="height: auto; object-fit: cover;">
+            <picture>
+                <source media="(max-width: 768px)" srcset="{% static 'img/ivo-pitz-mobile.jpg' %}">
+                <img src="{% static 'img/ivo-pitz.jpg' %}" alt="Descrição da imagem" class="img-fluid w-100"
+                    style="height: auto; object-fit: cover;">
+            </picture>
+
         </div>
     </div>
 
