@@ -170,30 +170,29 @@ AUTHENTICATION_BACKENDS = [
 
 
 SUMMERNOTE_CONFIG = {
+    # Configuração geral do Summernote
     'summernote': {
-        # Toolbar customization
-        # https://summernote.org/deep-dive/#custom-toolbar-popover
         'toolbar': [
-            ['style', ['style', ]],
-            ['font', ['bold', 'italic', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph', 'hr', ]],
-            ['table', ['table']],
-            ['insert', ['link', 'picture']],
-            ['view', ['fullscreen', 'codeview', 'undo', 'redo']],
+            ['insert', ['picture']],  # Apenas o botão de upload de imagens
         ],
-        'codemirror': {
-            'mode': 'htmlmixed',
-            'lineNumbers': 'true',
-            'lineWrapping': 'true',
-            'theme': 'dracula',
-        },
+        'lang': 'pt-BR',
     },
-    'css': (
-        '//cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css',
-    ),
-    'attachment_filesize_limit': 30 * 1024 * 1024,
+
+    # Configuração de restrições para upload
+    'attachment_require_authentication': True,  # Exige autenticação para uploads
+    'attachment_filesize_limit': 2 * 1024 * 1024,  # Limite de tamanho: 2MB
+    'attachment_file_extensions': ['jpg', 'jpeg', 'png'],  # Apenas imagens JPG e PNG são permitidas
+
+    # Configuração de Tooltips e Popovers
+    'popover': {
+        'image': [
+            ['custom', '<small>Somente imagens JPG ou PNG. Clique no botão ao lado para upload!</small>']
+        ],
+    },
+
 }
+
+
 
 AXES_ENABLED = True
 AXES_FAILURE_LIMIT = 3
