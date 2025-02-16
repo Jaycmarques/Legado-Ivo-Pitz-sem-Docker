@@ -11,6 +11,13 @@
                 <h5 class="card-title"><strong>{{ dedicatoria.name }}</strong></h5>
                 <!-- Exibindo a mensagem da dedicatória com filtro safe -->
                 <p class="card-text">{{ dedicatoria.message|safe }}</p>
+
+                <!-- Exibindo a imagem se existir -->
+                {% if dedicatoria.image %}
+                <div class="mt-3">
+                    <img src="{{ dedicatoria.image.url }}" alt="Imagem da Dedicatória" class="img-fluid rounded">
+                </div>
+                {% endif %}
             </div>
             <div class="card-footer text-muted">
                 <small>Enviado em {{ dedicatoria.created_at|date:"d/m/Y H:i" }}</small>

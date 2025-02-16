@@ -3,8 +3,8 @@
 {% block title %}Deixe Sua Dedicatória{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="mb-4">Deixe sua Dedicatória</h2>
+<div class="container-fluid mt-5">
+    <h2 class="mb-4 text-center">Deixe sua Dedicatória</h2>
 
     <!-- Exibe mensagens de sucesso -->
     {% if messages %}
@@ -17,12 +17,13 @@
     {% endif %}
 
     <!-- Formulário de dedicatória -->
-    <form method="POST" class="mb-4 shadow-sm p-4 rounded bg-light">
+    <form method="POST" enctype="multipart/form-data" class="mb-4 shadow-sm p-4 rounded bg-light w-100">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="button is-warning mt-4">Enviar</button>
+        <button type="submit" class="button is-warning mt-4 w-100">Enviar</button>
     </form>
-    <p class="text-muted">Sua dedicatória será publicada após a aprovação.</p>
+
+    <p class="text-muted text-center">Sua dedicatória será publicada após a aprovação.</p>
 </div>
 
 {% block extra_js %}
@@ -35,6 +36,14 @@
             height: 300, // Ajuste a altura conforme necessário
             codemirror: {
                 theme: 'dracula'
+            },
+            width: '100%', // Faz o Summernote ocupar 100% da largura disponível
+            maxWidth: '100%', // Garantir que não haja limites de largura
+            callbacks: {
+                onInit: function () {
+                    // Garantir que o editor tenha largura total
+                    $(this).next().css('width', '100%').css('max-width', '100%');
+                }
             }
         });
     });

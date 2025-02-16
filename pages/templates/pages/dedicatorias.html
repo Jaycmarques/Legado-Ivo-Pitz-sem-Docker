@@ -26,6 +26,10 @@
         {% for dedicatoria in page_obj %}
         <div class="col-12 col-sm-6 col-md-4 mb-4">
             <div class="card hover-effect h-100" style="border: 2px solid {{ dedicatoria.random_color }};">
+                <!-- Exibindo a imagem -->
+                {% if dedicatoria.image %}
+                <img src="{{ dedicatoria.image.url }}" class="card-img-top" alt="Imagem da dedicatória">
+                {% endif %}
                 <div class="card-body">
                     <!-- Exibindo a mensagem com o filtro safe para permitir o HTML formatado, incluindo imagens -->
                     <p class="card-text">{{ dedicatoria.message|safe|truncatewords:20 }}</p>
@@ -45,6 +49,7 @@
         </div>
         {% endfor %}
     </div>
+
 
     <!-- Paginação -->
     <nav class="pagination is-centered mt-4 text-center" role="navigation" aria-label="pagination">

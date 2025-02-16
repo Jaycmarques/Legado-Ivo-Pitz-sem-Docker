@@ -404,3 +404,44 @@ footer .container {
         /* Centraliza no ponto definido */
     }
 }
+
+/* GARANTINDO QUE AS IMAGENS DENTRO DO TEXTO SEJAM RESPONSIVAS */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+    /* Ajusta automaticamente a altura proporcionalmente à largura */
+    display: block;
+    /* Evita problemas de espaçamento extra */
+    margin: 0 auto;
+    /* Centraliza a imagem */
+}
+
+/* CORRIGINDO ESTILO DE LINHAS LONGAS NO TEXTO */
+.card-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    /* Impede que palavras longas ou HTML não quebrem corretamente */
+}
+
+/* Garante que o Summernote ocupe 100% da largura */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Garantir que o Summernote ocupe 100% da largura */
+    .note-editor {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Ajuste no botão e campos para 100% em dispositivos móveis */
+    .form-control,
+    .button,
+    .w-100 {
+        width: 100% !important;
+    }
+}

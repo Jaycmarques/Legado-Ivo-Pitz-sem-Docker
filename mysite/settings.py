@@ -126,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [{
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -170,10 +170,12 @@ AUTHENTICATION_BACKENDS = [
 
 
 SUMMERNOTE_CONFIG = {
+    'width': '100%',  # Ajuste da largura
+    'height': 500,  # Altura do editor
     # Configuração geral do Summernote
     'summernote': {
         'toolbar': [
-            ['insert', ['picture']],  # Apenas o botão de upload de imagens
+            ['insert', ],
         ],
         'lang': 'pt-BR',
     },

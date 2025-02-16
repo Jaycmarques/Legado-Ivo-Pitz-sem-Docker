@@ -15,7 +15,7 @@ def home_view(request, *args, **kwargs):
 # View para o formulário de criação de dedicatória
 def criar_dedicatoria(request):
     if request.method == "POST":
-        form = DedicatoriaForm(request.POST)
+        form = DedicatoriaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             # Exibe uma mensagem de sucesso
