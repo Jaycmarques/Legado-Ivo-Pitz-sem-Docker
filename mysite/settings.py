@@ -36,9 +36,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # DEBUG = bool(int(os.getenv('DEBUG', 0)))
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    h.strip() for h in os.getenv('ALLOWED_HOSTS', '127.0.0.1, localhost').split(',') if h.strip()
-]
+# ALLOWED_HOSTS = [
+#     h.strip() for h in os.getenv('ALLOWED_HOSTS', '127.0.0.1, localhost').split(',') if h.strip()
+# ]
+ALLOWED_HOSTS = ['railway.app','*.railway.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
