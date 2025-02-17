@@ -3,25 +3,25 @@ services:
     build: .
     container_name: legado-ivo-pitz
     volumes:
-      - .:/Legado-Ivo-Pitz:rw,cached # Monta o diretório atual como volume.
+      - .:/Legado-Ivo-Pitz:rw,cached
     ports:
-      - "8000:8000" # Mapeia a porta interna do Django para acesso externo.
+      - "8000:8000"
     env_file:
-      - ./dotenv_files/.env # Importa variáveis de ambiente do arquivo .env.
-    depends_on:
-      - psql # Garante que o banco de dados seja iniciado antes do Django.
+      - ./dotenv_files/.env
+    # depends_on:
+    #   - psql # Espera o banco estar pronto
     command: >
       sh -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
 
-  psql:
-    container_name: postgres
-    image: postgres:13-alpine
-    volumes:
-      - ./data/postgres/data:/var/lib/postgresql/data/
-    env_file:
-      - ./dotenv_files/.env # Importa variáveis de configuração do Postgres.
-    ports:
-      - "5433:5432" # Exponha a porta padrão do Postgres (opcional).
+    # psql:
+    #   container_name: postgres
+    #   image: postgres:13-alpine
+    #   volumes:
+    #     - ./data/postgres/data:/var/lib/postgresql/data/
+    #   env_file:
+    #     - ./dotenv_files/.env
+    #   ports:
+    #     - "5433:5432" # Expondo no host a porta 5433 (para o desenvolvimento local)
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U $POSTGRES_USER" ]
       interval: 10s
