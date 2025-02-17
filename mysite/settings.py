@@ -98,9 +98,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')),
-        'ENGINE': 'django.db.backends.postgresql',
-    
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600,  # ou outro valor que você queira para gerenciar conexões
+        ssl_require=True  # se seu banco exigir SSL
+    )
 }
      
  # Usando a variável já configurada no Railway
