@@ -101,16 +101,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         default=os.getenv('DATABASE_URL')
 #     )
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('PGDATABASE'),  # Nome do banco de dados
-        'USER': os.getenv('PGUSER'),      # Usuário
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # Senha
-        'HOST': os.getenv('RAILWAY_PRIVATE_DOMAIN'),  # Domínio privado do Railway
-        'PORT': '5432',  # Porto padrão do PostgreSQL
-    }
-}
+DATABASE_URL = os.getenv('DATABASE_URL')  # Usando a variável já configurada no Railway
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
