@@ -101,7 +101,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         default=os.getenv('DATABASE_URL')
 #     )
 # }
-DATABASE_URL = os.getenv('DATABASE_URL')  # Usando a variável já configurada no Railway
+DATABASE_URL =[
+     os.getenv('DATABASE_URL'), 
+     'ENGINE': 'django.db.backends.postgresql',
+  ]  # Usando a variável já configurada no Railway
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
