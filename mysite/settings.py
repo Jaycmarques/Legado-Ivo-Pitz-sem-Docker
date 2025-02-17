@@ -31,10 +31,10 @@ load_dotenv(BASE_DIR.parent / 'dotenv_files' / '.env', override=True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
-SECRET_KEY="!l@5kahdte8w#tlg5+u4z_)vq9k1_h3r13+q$5d7qk7npz#6t2"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.getenv('DEBUG', 0)))
+# DEBUG = bool(int(os.getenv('DEBUG', 0)))
+DEBUG = False
 
 ALLOWED_HOSTS = [
     h.strip() for h in os.getenv('ALLOWED_HOSTS', '127.0.0.1, localhost').split(',') if h.strip()
