@@ -96,10 +96,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.getenv('DATABASE_URL')
+#     )
+# }
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PGDATABASE'),  # Nome do banco de dados
+        'USER': os.getenv('PGUSER'),      # Usuário
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # Senha
+        'HOST': os.getenv('RAILWAY_PRIVATE_DOMAIN'),  # Domínio privado do Railway
+        'PORT': '5432',  # Porto padrão do PostgreSQL
+    }
 }
 # DATABASES = {
 #     'default': {
