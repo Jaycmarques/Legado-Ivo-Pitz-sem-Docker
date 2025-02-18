@@ -99,9 +99,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default=os.getenv('DATABASE_URL'),
-        
     )
 }
+
+# Sobrescrevendo o NAME manualmente
+DATABASES['default']['NAME'] = 'railway'
      
  # Usando a variável já configurada no Railway
 # DATABASES = {
