@@ -101,7 +101,6 @@ DATABASES = {
     )
 }
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
-DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
 DATABASES['default']['NAME'] = 'railway'
  # Usando a variável já configurada no Railway
 # DATABASES = {
