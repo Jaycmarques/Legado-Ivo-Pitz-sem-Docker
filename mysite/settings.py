@@ -97,14 +97,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',  # Backend do PostgreSQL
+        'NAME': os.getenv('DB_NAME', 'railway'),    # Nome do banco de dados
+        'USER': os.getenv('DB_USER', 'usuario'),    # Usuário do banco de dados
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),  # Senha do banco de dados
+        'HOST': os.getenv('DB_HOST', 'localhost'), # Host do banco
+        'PORT': os.getenv('DB_PORT', '5432'),      # Porta do banco
+        'OPTIONS': {
+            'sslmode': 'require',  # Adicione SSL se o Railway exigir
+        },
+    }
 }
 
-# Sobrescrevendo o NAME manualmente
-DATABASES['default']['NAME'] = 'railway'
-DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
 
      
  # Usando a variável já configurada no Railway
