@@ -94,25 +94,33 @@ TEMPLATES = [{
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-# DATABASES = {
-#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-# }
-# DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
-# DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
+import os
+from decouple import config
 
- # Usando a variável já configurada no Railway
-DATABASES = {
-    'default': {
-        'ENGINE': config('DB_ENGINE', default='django.db.backends.postgresql'),
-        'NAME': config('POSTGRES_DB'),
-        'USER': config('POSTGRES_USER'),
-        'PASSWORD': config('POSTGRES_PASSWORD'),
-        'HOST': config('POSTGRES_HOST'),
-        'PORT': config('POSTGRES_PORT', default='5432'),
+# Detectando o ambiente (Desenvolvimento ou Produção)
+DJANGO_ENV = config('DJANGO_ENV', default='development')
+
+if DJANGO_ENV == 'production':
+    # Configuração para PostgreSQL em Produção
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('POSTGRES_DB'),
+            'USER': config('POSTGRES_USER'),
+            'PASSWORD': config('POSTGRES_PASSWORD'),
+            'HOST': config('POSTGRES_HOST'),
+            'PORT': config('POSTGRES_PORT', default='5432'),
+        }
     }
-}
+else:
+    # Configuração para SQLite em Desenvolvimento
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',  # Caminho do arquivo SQLite local
+        }
+    }
+
 
 
 # Password validation
