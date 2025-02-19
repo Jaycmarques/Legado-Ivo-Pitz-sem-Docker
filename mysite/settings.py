@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -95,24 +96,23 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
-    )
-}
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
-DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
- # Usando a variável já configurada no Railway
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('POSTGRES_DB'),
-#         'USER': os.getenv('POSTGRES_USER'),
-#         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-#         'HOST': 'psql',  # Nome do serviço no docker-compose
-#         'PORT': '5432',
-#     }
+#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 # }
+# DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+# DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
+
+ # Usando a variável já configurada no Railway
+DATABASES = {
+    'default': {
+        'ENGINE': config('DB_ENGINE', default='django.db.backends.postgresql'),
+        'NAME': config('POSTGRES_DB'),
+        'USER': config('POSTGRES_USER'),
+        'PASSWORD': config('POSTGRES_PASSWORD'),
+        'HOST': config('POSTGRES_HOST'),
+        'PORT': config('POSTGRES_PORT', default='5432'),
+    }
+}
 
 
 # Password validation
@@ -219,20 +219,20 @@ INTERNAL_IPS = [
 ]
 
 # HSTS (HTTP Strict Transport Security)
-SECURE_HSTS_SECONDS = 31536000  # 1 ano
-# SECURE_HSTS_SECONDS = 0
+# SECURE_HSTS_SECONDS = 31536000  # 1 ano
+# # SECURE_HSTS_SECONDS = 0
 
-# Desativa o suporte a HTTP em servidores não seguros
-SECURE_BROWSER_XSS_FILTER = True
+# # Desativa o suporte a HTTP em servidores não seguros
+# SECURE_BROWSER_XSS_FILTER = True
 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
 
-# # Forçar SSL (HTTPS)
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# # # Forçar SSL (HTTPS)
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-# Cookies seguros
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# # Cookies seguros
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
