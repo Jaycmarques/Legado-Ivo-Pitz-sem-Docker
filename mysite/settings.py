@@ -40,7 +40,7 @@ DEBUG = True
 # ALLOWED_HOSTS = [
 #     h.strip() for h in os.getenv('ALLOWED_HOSTS', '127.0.0.1, localhost').split(',') if h.strip()
 # ]
-ALLOWED_HOSTS = ['legado-ivo-pitz-production-8c61.up.railway.app', 'www.legado-ivo-pitz-production-8c61.up.railway.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['legado-ivo-pitz-sem-docker-production.up.railway.app', 'www.legado-ivo-pitz-sem-docker-production.up.railway.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -93,9 +93,6 @@ TEMPLATES = [{
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
-import os
-from decouple import config
 
 # Detectando o ambiente (Desenvolvimento ou Produção)
 DJANGO_ENV = config('DJANGO_ENV', default='development')
