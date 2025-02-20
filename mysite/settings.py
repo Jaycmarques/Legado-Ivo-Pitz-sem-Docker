@@ -116,8 +116,8 @@ DATABASES = {
             'NAME': 'railway',
             'USER': 'postgres',
             'PASSWORD': config('POSTGRES_PASSWORD'),
-            'HOST': 'postgres.railway.internal',
-            'PORT': '5432',
+            'HOST': 'yamabiko.proxy.rlwy.net',
+            'PORT': '33092',
         }
     }
 # else:
