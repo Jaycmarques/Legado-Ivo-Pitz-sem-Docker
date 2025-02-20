@@ -96,11 +96,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # Detectando o ambiente (Desenvolvimento ou Produção)
-DJANGO_ENV = config('DJANGO_ENV', default='development')
+# DJANGO_ENV = config('DJANGO_ENV', default='development')
 
-if DJANGO_ENV == 'production':
-    # Configuração para PostgreSQL em Produção
-    DATABASES = {
+# if DJANGO_ENV == 'production':
+#     # Configuração para PostgreSQL em Produção
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': config('POSTGRES_DB'),
@@ -110,14 +110,14 @@ if DJANGO_ENV == 'production':
             'PORT': config('POSTGRES_PORT', default='5432'),
         }
     }
-else:
-    # Configuração para SQLite em Desenvolvimento
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',  # Caminho do arquivo SQLite local
-        }
-    }
+# else:
+#     # Configuração para SQLite em Desenvolvimento
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',  # Caminho do arquivo SQLite local
+#         }
+#     }
 
 
 # Password validation
